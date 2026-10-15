@@ -3,210 +3,281 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The personal website and professional portfolio of Himel Muhammad.">
-  <meta name="theme-color" content="#101827">
-  <title>Himel Muhammad | Personal Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Himel Muhammad — Personal Development and Life Coach. Challenge limiting beliefs and unlock your potential.">
+  <title>Himel Muhammad | Personal Development & Life Coach</title>
   <style>
     :root {
-      --bg: #0b1120;
-      --panel: #121c30;
-      --text: #f3f6fc;
-      --muted: #a5b2c8;
-      --accent: #8ce5c1;
+      --bg: #0b1020;
+      --panel: #111a2e;
+      --panel2: #151f35;
+      --text: #f4f6fb;
+      --muted: #aab5c9;
+      --accent: #9ce8c9;
       --line: rgba(255,255,255,.12);
+      --max: 1120px;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 90px; }
     body {
       margin: 0;
-      background: var(--bg);
       color: var(--text);
-      font-family: Arial, "Noto Sans Bengali", sans-serif;
+      background:
+        radial-gradient(ellipse at 80% 0%, rgba(89,131,160,.13), transparent 38%),
+        var(--bg);
+      font-family: Inter, Arial, "Noto Sans Bengali", sans-serif;
       line-height: 1.75;
     }
+    body.bn { font-family: "Noto Sans Bengali", Arial, sans-serif; }
     a { color: inherit; text-decoration: none; }
     a:hover { color: var(--accent); }
-    .container { width: min(1080px, 90%); margin: auto; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .wrap { width: min(var(--max), 90%); margin: auto; }
     header {
-      position: sticky; top: 0; z-index: 10;
-      background: rgba(11,17,32,.92);
-      backdrop-filter: blur(14px);
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(11,16,32,.88);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--line);
     }
     .nav {
-      min-height: 76px; display: flex; align-items: center;
-      justify-content: space-between; gap: 20px;
+      min-height: 76px; display: flex; justify-content: space-between;
+      align-items: center; gap: 22px;
     }
-    .brand { font-size: 20px; font-weight: 800; letter-spacing: -.5px; }
+    .brand { font-weight: 850; font-size: 19px; letter-spacing: -.6px; white-space: nowrap; }
     .brand span { color: var(--accent); }
-    nav { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; }
-    nav a { font-size: 13px; color: var(--muted); }
-    .lang {
+    nav { display: flex; align-items: center; flex-wrap: wrap; gap: 19px; }
+    nav a { color: var(--muted); font-size: 13px; }
+    .language {
+      color: var(--text); background: var(--panel);
       border: 1px solid var(--line); border-radius: 30px;
-      padding: 8px 13px; background: var(--panel); color: var(--text);
-      cursor: pointer;
+      padding: 7px 12px; cursor: pointer;
     }
-    .hero { padding: 105px 0 90px; }
-    .eyebrow { color: var(--accent); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; }
-    h1 { font-size: clamp(42px, 8vw, 78px); line-height: 1.12; letter-spacing: -2px; margin: 18px 0; }
+    .hero { padding: 110px 0 100px; }
+    .eyebrow {
+      color: var(--accent); font-size: 12px; font-weight: 700;
+      letter-spacing: 2.2px; text-transform: uppercase;
+    }
+    h1 {
+      max-width: 900px; margin: 22px 0;
+      font-size: clamp(43px, 7.6vw, 82px);
+      line-height: 1.08; letter-spacing: -3px;
+    }
     h1 span { color: var(--accent); }
-    .intro { max-width: 680px; color: var(--muted); font-size: 18px; }
-    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .lead { max-width: 670px; color: var(--muted); font-size: clamp(16px, 2vw, 19px); }
+    .buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
     .btn {
-      display: inline-block; padding: 11px 18px; border-radius: 8px;
-      border: 1px solid var(--line); font-weight: 700; font-size: 14px;
+      display: inline-flex; justify-content: center; align-items: center;
+      padding: 12px 18px; border-radius: 8px; font-size: 14px;
+      font-weight: 700; border: 1px solid var(--line); transition: .2s;
     }
-    .btn.primary { background: var(--accent); color: #08151b; border-color: var(--accent); }
-    section { padding: 65px 0; border-top: 1px solid var(--line); }
-    .section-label { color: var(--accent); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
-    h2 { font-size: clamp(28px, 4vw, 40px); margin: 8px 0 24px; letter-spacing: -1px; }
-    .copy { max-width: 760px; color: var(--muted); }
-    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .btn:hover { transform: translateY(-2px); }
+    .primary { color: #08151b; background: var(--accent); border-color: var(--accent); }
+    .primary:hover { color: #08151b; background: #b7f5dc; }
+    .hero-note { margin-top: 42px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    section { padding: 76px 0; border-top: 1px solid var(--line); }
+    .section-id { color: var(--accent); font-size: 11px; letter-spacing: 2px; font-weight: 700; }
+    h2 { font-size: clamp(29px, 4vw, 43px); line-height: 1.2; letter-spacing: -1.3px; margin: 12px 0 22px; }
+    .body-copy { color: var(--muted); max-width: 750px; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; margin-top: 28px; }
     .card {
-      background: var(--panel); border: 1px solid var(--line);
-      border-radius: 14px; padding: 23px;
+      padding: 25px; border: 1px solid var(--line);
+      border-radius: 14px; background: linear-gradient(145deg, var(--panel), rgba(17,26,46,.65));
     }
-    .card h3 { margin: 0 0 8px; font-size: 19px; }
-    .card p { margin: 0; color: var(--muted); }
-    .tag { display: inline-block; color: var(--accent); font-size: 12px; margin-bottom: 10px; }
-    .contact-list { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
-    footer { padding: 28px 0; color: var(--muted); font-size: 13px; }
-    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
-    [lang="bn"] { font-family: "Noto Sans Bengali", Arial, sans-serif; }
-    @media (max-width: 760px) {
-      .nav { padding: 14px 0; align-items: flex-start; flex-direction: column; }
+    .number { color: var(--accent); font-size: 12px; letter-spacing: 1px; }
+    .card h3 { font-size: 19px; margin: 12px 0 8px; }
+    .card p { color: var(--muted); font-size: 14px; margin: 0; }
+    .split { display: grid; grid-template-columns: .7fr 1.3fr; gap: 45px; align-items: start; }
+    .quote {
+      border-left: 2px solid var(--accent); padding: 8px 0 8px 22px;
+      color: var(--text); font-size: clamp(20px, 3vw, 28px); line-height: 1.5;
+    }
+    .simple-list { list-style: none; padding: 0; margin: 20px 0; }
+    .simple-list li { padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--muted); }
+    .simple-list li::before { content: "↗"; color: var(--accent); margin-right: 12px; }
+    .contact-panel {
+      padding: clamp(25px, 5vw, 54px); border: 1px solid var(--line);
+      border-radius: 18px; background: var(--panel);
+    }
+    .email { overflow-wrap: anywhere; }
+    footer { padding: 26px 0; color: var(--muted); font-size: 12px; }
+    .footer-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    @media (max-width: 800px) {
+      .nav { padding: 15px 0; align-items: flex-start; flex-direction: column; }
       nav { gap: 12px; }
-      .hero { padding: 72px 0 60px; }
+      .hero { padding: 78px 0 65px; }
+      h1 { letter-spacing: -1.8px; }
       .grid { grid-template-columns: 1fr; }
-      h1 { letter-spacing: -1px; }
+      .split { grid-template-columns: 1fr; gap: 16px; }
+      section { padding: 58px 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="container nav">
+    <div class="wrap nav">
       <a class="brand" href="#home">HIMEL<span>.</span></a>
       <nav aria-label="Main navigation">
         <a href="#about" data-en="About" data-bn="পরিচিতি">About</a>
-        <a href="#cv" data-en="CV" data-bn="জীবনবৃত্তান্ত">CV</a>
-        <a href="#work" data-en="Work" data-bn="কাজ">Work</a>
-        <a href="#publications" data-en="Publications" data-bn="প্রকাশনা">Publications</a>
+        <a href="#approach" data-en="My Approach" data-bn="আমার পদ্ধতি">My Approach</a>
+        <a href="#journey" data-en="Your Journey" data-bn="আপনার যাত্রা">Your Journey</a>
+        <a href="#background" data-en="Background" data-bn="অভিজ্ঞতা">Background</a>
         <a href="#contact" data-en="Contact" data-bn="যোগাযোগ">Contact</a>
-        <button class="lang" id="languageToggle" type="button">বাংলা</button>
+        <button class="language" id="languageToggle" type="button" aria-label="Change language">বাংলা</button>
       </nav>
     </div>
   </header>
 
   <main>
-    <div class="container hero" id="home">
-      <div class="eyebrow" data-en="PERSONAL WEBSITE & PORTFOLIO" data-bn="ব্যক্তিগত ওয়েবসাইট ও পোর্টফোলিও">PERSONAL WEBSITE & PORTFOLIO</div>
+    <div class="wrap hero" id="home">
+      <div class="eyebrow" data-en="PERSONAL DEVELOPMENT · LIFE COACHING" data-bn="ব্যক্তিগত উন্নয়ন · লাইফ কোচিং">PERSONAL DEVELOPMENT · LIFE COACHING</div>
       <h1>
-        <span data-en="Hello, I'm" data-bn="স্বাগতম, আমি">Hello, I'm</span><br>
-        Himel Muhammad<span>.</span>
+        <span data-en="Break Your Limits." data-bn="সীমাবদ্ধতা ভাঙুন।">Break Your Limits.</span><br>
+        <span data-en="Unlock Your Potential." data-bn="নিজের সম্ভাবনা জাগিয়ে তুলুন।">Unlock Your Potential.</span>
       </h1>
-      <p class="intro" data-en="Welcome to my personal website. This is where I share my background, professional interests, work, and publications." data-bn="আমার ব্যক্তিগত ওয়েবসাইটে স্বাগতম। এখানে আমার পরিচিতি, পেশাগত আগ্রহ, কাজ এবং প্রকাশনা সম্পর্কে জানতে পারবেন।">
-        Welcome to my personal website. This is where I share my background, professional interests, work, and publications.
+      <p class="lead" data-en="We work together to challenge limiting beliefs, build a stronger mindset, and help you move toward the life you want to create." data-bn="সীমাবদ্ধ বিশ্বাসকে নতুনভাবে দেখতে, আরও দৃঢ় মানসিকতা গড়ে তুলতে এবং নিজের কাঙ্ক্ষিত জীবনের দিকে এগিয়ে যেতে আমরা একসঙ্গে কাজ করি।">
+        We work together to challenge limiting beliefs, build a stronger mindset, and help you move toward the life you want to create.
       </p>
-      <div class="actions">
-        <a class="btn primary" href="#about" data-en="Discover more ↗" data-bn="আরও জানুন ↗">Discover more ↗</a>
-        <a class="btn" href="#contact" data-en="Get in touch" data-bn="যোগাযোগ করুন">Get in touch</a>
+      <div class="buttons">
+        <a class="btn primary" href="#contact" data-en="Start Your Journey ↗" data-bn="আপনার যাত্রা শুরু করুন ↗">Start Your Journey ↗</a>
+        <a class="btn" href="#approach" data-en="Explore My Approach" data-bn="আমার পদ্ধতি জানুন">Explore My Approach</a>
       </div>
+      <div class="hero-note" data-en="HIMEL MUHAMMAD &nbsp; / &nbsp; PERSONAL DEVELOPMENT AND LIFE COACH" data-bn="হিমেল মুহাম্মদ &nbsp; / &nbsp; ব্যক্তিগত উন্নয়ন ও লাইফ কোচ">HIMEL MUHAMMAD / PERSONAL DEVELOPMENT AND LIFE COACH</div>
     </div>
 
     <section id="about">
-      <div class="container">
-        <div class="section-label">01 / <span data-en="INTRODUCTION" data-bn="পরিচিতি">INTRODUCTION</span></div>
-        <h2 data-en="About Me" data-bn="আমার সম্পর্কে">About Me</h2>
-        <p class="copy" data-en="Write a short introduction about yourself here. Describe your background, interests, goals, and what you would like visitors to know about you. Replace this sample text with your real biography." data-bn="এখানে নিজের সম্পর্কে সংক্ষিপ্ত পরিচিতি লিখুন। আপনার অভিজ্ঞতা, আগ্রহ, লক্ষ্য এবং দর্শনার্থীদের আপনার সম্পর্কে কী জানা উচিত তা তুলে ধরুন। এই নমুনা লেখাটি নিজের প্রকৃত তথ্য দিয়ে পরিবর্তন করুন।">
-          Write a short introduction about yourself here. Describe your background, interests, goals, and what you would like visitors to know about you. Replace this sample text with your real biography.
-        </p>
-      </div>
-    </section>
-
-    <section id="cv">
-      <div class="container">
-        <div class="section-label">02 / <span data-en="BACKGROUND" data-bn="পটভূমি">BACKGROUND</span></div>
-        <h2 data-en="CV & Experience" data-bn="জীবনবৃত্তান্ত ও অভিজ্ঞতা">CV & Experience</h2>
-        <div class="grid">
-          <article class="card">
-            <span class="tag" data-en="EDUCATION" data-bn="শিক্ষা">EDUCATION</span>
-            <h3 data-en="Your Degree or Qualification" data-bn="আপনার ডিগ্রি বা যোগ্যতা">Your Degree or Qualification</h3>
-            <p data-en="Add your institution, subject, and year. Remove this card if it does not apply." data-bn="প্রতিষ্ঠান, বিষয় এবং সাল যোগ করুন। প্রযোজ্য না হলে এই অংশটি মুছে দিন।">Add your institution, subject, and year. Remove this card if it does not apply.</p>
-          </article>
-          <article class="card">
-            <span class="tag" data-en="EXPERIENCE" data-bn="অভিজ্ঞতা">EXPERIENCE</span>
-            <h3 data-en="Your Role or Professional Experience" data-bn="আপনার পদ বা পেশাগত অভিজ্ঞতা">Your Role or Professional Experience</h3>
-            <p data-en="Add your real role, organization, and responsibilities here." data-bn="এখানে আপনার প্রকৃত পদ, প্রতিষ্ঠান এবং দায়িত্ব লিখুন।">Add your real role, organization, and responsibilities here.</p>
-          </article>
+      <div class="wrap split">
+        <div>
+          <div class="section-id">01 / ABOUT</div>
+          <h2 data-en="Change the way you see what is possible." data-bn="সম্ভাবনাকে দেখার দৃষ্টিভঙ্গি বদলান।">Change the way you see what is possible.</h2>
         </div>
-        <p class="copy" style="margin-top:20px" data-en="A downloadable CV can be linked here later, once you have a final version ready to publish." data-bn="প্রকাশের জন্য চূড়ান্ত CV প্রস্তুত হলে পরে এখানে তার লিংক যোগ করতে পারবেন।">
-          A downloadable CV can be linked here later, once you have a final version ready to publish.
-        </p>
+        <div>
+          <p class="body-copy" data-en="I am Himel Muhammad, a Personal Development and Life Coach. My focus is helping people recognise the limiting beliefs that may be holding them back and explore new ways of thinking and moving forward." data-bn="আমি হিমেল মুহাম্মদ, একজন Personal Development and Life Coach। যেসব সীমাবদ্ধ বিশ্বাস মানুষকে সামনে এগিয়ে যেতে বাধা দিতে পারে, সেগুলো চিনতে এবং নতুনভাবে ভাবতে ও এগিয়ে যেতে মানুষকে সহায়তা করাই আমার কাজের মূল লক্ষ্য।">
+            I am Himel Muhammad, a Personal Development and Life Coach. My focus is helping people recognise the limiting beliefs that may be holding them back and explore new ways of thinking and moving forward.
+          </p>
+          <p class="body-copy" data-en="Personal growth is a process, not a quick fix. It starts with awareness, continues with intentional action, and develops through consistent practice." data-bn="ব্যক্তিগত উন্নয়ন একটি প্রক্রিয়া—তাৎক্ষণিক সমাধান নয়। এটি শুরু হয় সচেতনতা দিয়ে, এগিয়ে চলে উদ্দেশ্যপূর্ণ পদক্ষেপে এবং বিকশিত হয় ধারাবাহিক অনুশীলনের মাধ্যমে।">
+            Personal growth is a process, not a quick fix. It starts with awareness, continues with intentional action, and develops through consistent practice.
+          </p>
+        </div>
       </div>
     </section>
 
-    <section id="work">
-      <div class="container">
-        <div class="section-label">03 / <span data-en="SELECTED WORK" data-bn="নির্বাচিত কাজ">SELECTED WORK</span></div>
-        <h2 data-en="What I Do" data-bn="আমার কাজ">What I Do</h2>
+    <section id="approach">
+      <div class="wrap">
+        <div class="section-id">02 / MY APPROACH</div>
+        <h2 data-en="A more intentional way forward." data-bn="সচেতনভাবে সামনে এগিয়ে যাওয়ার পথ।">A more intentional way forward.</h2>
+        <p class="body-copy" data-en="Growth can begin with small, thoughtful steps. Coaching conversations can help you reflect on your beliefs, clarify your priorities, and consider practical next steps." data-bn="ছোট কিন্তু ভেবেচিন্তে নেওয়া পদক্ষেপ দিয়েও উন্নয়ন শুরু হতে পারে। কোচিংয়ের আলোচনা আপনার বিশ্বাস নিয়ে ভাবতে, অগ্রাধিকার স্পষ্ট করতে এবং বাস্তবসম্মত পরবর্তী পদক্ষেপ ঠিক করতে সহায়তা করতে পারে।">
+          Growth can begin with small, thoughtful steps. Coaching conversations can help you reflect on your beliefs, clarify your priorities, and consider practical next steps.
+        </p>
         <div class="grid">
           <article class="card">
-            <h3 data-en="Project One" data-bn="প্রজেক্ট এক">Project One</h3>
-            <p data-en="Describe a real project, your contribution, and its outcome. Add a link when available." data-bn="একটি প্রকৃত কাজ, আপনার অবদান এবং ফলাফল বর্ণনা করুন। থাকলে লিংক যোগ করুন।">Describe a real project, your contribution, and its outcome. Add a link when available.</p>
+            <div class="number">01 / AWARENESS</div>
+            <h3 data-en="Recognise the Patterns" data-bn="চিন্তার ধরন চিনুন">Recognise the Patterns</h3>
+            <p data-en="Notice the assumptions and habits that influence your decisions." data-bn="আপনার সিদ্ধান্তকে প্রভাবিত করে এমন ধারণা ও অভ্যাসগুলো লক্ষ্য করুন।">Notice the assumptions and habits that influence your decisions.</p>
           </article>
           <article class="card">
-            <h3 data-en="Project Two" data-bn="প্রজেক্ট দুই">Project Two</h3>
-            <p data-en="Replace this sample with another project, initiative, or area of professional interest." data-bn="এই নমুনার বদলে অন্য কোনো প্রকল্প, উদ্যোগ বা পেশাগত আগ্রহের বিষয় লিখুন।">Replace this sample with another project, initiative, or area of professional interest.</p>
+            <div class="number">02 / MINDSET</div>
+            <h3 data-en="Challenge Limiting Beliefs" data-bn="সীমাবদ্ধ বিশ্বাসকে প্রশ্ন করুন">Challenge Limiting Beliefs</h3>
+            <p data-en="Explore alternative perspectives and develop a more constructive mindset." data-bn="বিকল্প দৃষ্টিভঙ্গি বিবেচনা করুন এবং আরও গঠনমূলক মানসিকতা গড়ে তুলুন।">Explore alternative perspectives and develop a more constructive mindset.</p>
+          </article>
+          <article class="card">
+            <div class="number">03 / ACTION</div>
+            <h3 data-en="Move with Purpose" data-bn="উদ্দেশ্য নিয়ে এগিয়ে যান">Move with Purpose</h3>
+            <p data-en="Turn reflection into realistic actions aligned with your personal goals." data-bn="নিজের লক্ষ্য অনুযায়ী বাস্তবসম্মত পদক্ষেপে ভাবনাকে রূপ দিন।">Turn reflection into realistic actions aligned with your personal goals.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="publications">
-      <div class="container">
-        <div class="section-label">04 / <span data-en="WRITING & RESEARCH" data-bn="লেখালেখি ও গবেষণা">WRITING & RESEARCH</span></div>
-        <h2 data-en="Publications" data-bn="প্রকাশনা">Publications</h2>
-        <div class="card">
-          <h3 data-en="Your article or publication title" data-bn="আপনার প্রবন্ধ বা প্রকাশনার শিরোনাম">Your article or publication title</h3>
-          <p data-en="Add the actual title, authors, journal or publisher, year, and DOI or public link. Do not list unpublished work as published." data-bn="প্রকৃত শিরোনাম, লেখক, জার্নাল বা প্রকাশক, সাল এবং DOI বা উন্মুক্ত লিংক যোগ করুন। অপ্রকাশিত কাজকে প্রকাশিত হিসেবে দেখাবেন না।">Add the actual title, authors, journal or publisher, year, and DOI or public link. Do not list unpublished work as published.</p>
+    <section id="journey">
+      <div class="wrap split">
+        <div>
+          <div class="section-id">03 / YOUR JOURNEY</div>
+          <h2 data-en="Your next chapter starts with one step." data-bn="আপনার নতুন অধ্যায় শুরু হোক একটি পদক্ষেপে।">Your next chapter starts with one step.</h2>
+        </div>
+        <div>
+          <div class="quote" data-en="You do not have to have everything figured out to begin moving forward." data-bn="সামনে এগিয়ে যেতে শুরু করার আগে সবকিছুর উত্তর জানা জরুরি নয়।">
+            You do not have to have everything figured out to begin moving forward.
+          </div>
+          <ul class="simple-list">
+            <li data-en="Reflect on what matters most to you." data-bn="আপনার কাছে সবচেয়ে গুরুত্বপূর্ণ বিষয়গুলো নিয়ে ভাবুন।">Reflect on what matters most to you.</li>
+            <li data-en="Identify a belief or habit you want to reconsider." data-bn="যে বিশ্বাস বা অভ্যাসটি নতুনভাবে বিবেচনা করতে চান, তা চিহ্নিত করুন।">Identify a belief or habit you want to reconsider.</li>
+            <li data-en="Choose one realistic action to take next." data-bn="পরবর্তী সময়ে নেওয়ার জন্য একটি বাস্তবসম্মত পদক্ষেপ বেছে নিন।">Choose one realistic action to take next.</li>
+          </ul>
+          <p class="body-copy" data-en="Every person's circumstances are different. Your goals and pace are your own." data-bn="প্রত্যেকের পরিস্থিতি আলাদা। আপনার লক্ষ্য ও এগিয়ে যাওয়ার গতি আপনার নিজস্ব।">Every person's circumstances are different. Your goals and pace are your own.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="background">
+      <div class="wrap">
+        <div class="section-id">04 / PROFESSIONAL BACKGROUND</div>
+        <h2 data-en="Background & Resources" data-bn="অভিজ্ঞতা ও রিসোর্স">Background & Resources</h2>
+        <p class="body-copy" data-en="This section can showcase verified qualifications, coaching experience, workshops, articles, and publications as they become available." data-bn="এই অংশে যাচাইকৃত যোগ্যতা, কোচিংয়ের অভিজ্ঞতা, কর্মশালা, প্রবন্ধ ও প্রকাশনা যুক্ত করা যাবে—যখন সেগুলো দেওয়ার জন্য প্রস্তুত হবে।">
+          This section can showcase verified qualifications, coaching experience, workshops, articles, and publications as they become available.
+        </p>
+        <div class="grid">
+          <article class="card">
+            <div class="number">CV / EXPERIENCE</div>
+            <h3 data-en="Professional Profile" data-bn="পেশাগত পরিচিতি">Professional Profile</h3>
+            <p data-en="Professional experience and verified qualifications can be added here." data-bn="এখানে পেশাগত অভিজ্ঞতা ও যাচাইকৃত যোগ্যতা যোগ করা যাবে।">Professional experience and verified qualifications can be added here.</p>
+          </article>
+          <article class="card">
+            <div class="number">WORK</div>
+            <h3 data-en="Projects & Workshops" data-bn="প্রকল্প ও কর্মশালা">Projects & Workshops</h3>
+            <p data-en="Add real projects, events, workshops, or coaching initiatives here." data-bn="এখানে প্রকৃত প্রকল্প, ইভেন্ট, কর্মশালা বা কোচিং উদ্যোগ যোগ করুন।">Add real projects, events, workshops, or coaching initiatives here.</p>
+          </article>
+          <article class="card">
+            <div class="number">PUBLICATIONS</div>
+            <h3 data-en="Articles & Insights" data-bn="প্রবন্ধ ও ভাবনা">Articles & Insights</h3>
+            <p data-en="Add published articles, essays, and public resources with their links." data-bn="প্রকাশিত প্রবন্ধ, লেখা ও উন্মুক্ত রিসোর্সের লিংক এখানে যোগ করুন।">Add published articles, essays, and public resources with their links.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="contact">
-      <div class="container">
-        <div class="section-label">05 / <span data-en="SAY HELLO" data-bn="যোগাযোগ">SAY HELLO</span></div>
-        <h2 data-en="Let's Connect" data-bn="যোগাযোগ করি">Let's Connect</h2>
-        <p class="copy" data-en="For professional enquiries, collaborations, or conversations, use the contact details you choose to publish below." data-bn="পেশাগত যোগাযোগ, যৌথ কাজ বা আলোচনার জন্য নিচে আপনার প্রকাশ করতে ইচ্ছুক যোগাযোগের তথ্য যোগ করুন।">For professional enquiries, collaborations, or conversations, use the contact details you choose to publish below.</p>
-        <div class="contact-list">
-          <!-- Replace the sample email before publishing -->
-          <a class="btn primary" href="mailto:your.email@example.com" data-en="Email Me ↗" data-bn="ইমেইল করুন ↗">Email Me ↗</a>
-          <!-- Add your real LinkedIn or other professional profile URL -->
-          <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      <div class="wrap">
+        <div class="contact-panel">
+          <div class="section-id">05 / LET'S CONNECT</div>
+          <h2 data-en="Ready to start a conversation?" data-bn="আলোচনা শুরু করতে প্রস্তুত?">Ready to start a conversation?</h2>
+          <p class="body-copy" data-en="For questions, professional enquiries, or coaching-related conversations, feel free to send me an email." data-bn="প্রশ্ন, পেশাগত যোগাযোগ বা কোচিং-সম্পর্কিত আলোচনার জন্য ইমেইল করতে পারেন।">
+            For questions, professional enquiries, or coaching-related conversations, feel free to send me an email.
+          </p>
+          <div class="buttons">
+            <a class="btn primary" href="mailto:coachhimelmuhammad@gmail.com" data-en="Email Himel ↗" data-bn="হিমেলকে ইমেইল করুন ↗">Email Himel ↗</a>
+            <a class="btn email" href="mailto:coachhimelmuhammad@gmail.com">coachhimelmuhammad@gmail.com</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-inner">
+    <div class="wrap footer-row">
       <span>© <span id="year"></span> Himel Muhammad</span>
-      <span data-en="Built with care. Hosted on GitHub Pages." data-bn="যত্ন নিয়ে তৈরি। GitHub Pages-এ হোস্ট করা।">Built with care. Hosted on GitHub Pages.</span>
+      <span data-en="Personal Development & Life Coaching" data-bn="ব্যক্তিগত উন্নয়ন ও লাইফ কোচিং">Personal Development & Life Coaching</span>
     </div>
   </footer>
 
   <script>
-    const toggle = document.getElementById("languageToggle");
-    let currentLanguage = "en";
+    const languageToggle = document.getElementById("languageToggle");
+    let language = "en";
 
-    toggle.addEventListener("click", function () {
-      currentLanguage = currentLanguage === "en" ? "bn" : "en";
-      document.documentElement.lang = currentLanguage;
-      document.querySelectorAll("[data-en][data-bn]").forEach(function (element) {
-        element.textContent = element.getAttribute("data-" + currentLanguage);
+    languageToggle.addEventListener("click", function () {
+      language = language === "en" ? "bn" : "en";
+      document.documentElement.lang = language;
+      document.body.classList.toggle("bn", language === "bn");
+
+      document.querySelectorAll("[data-en][data-bn]").forEach(function (item) {
+        item.textContent = item.getAttribute("data-" + language);
       });
-      toggle.textContent = currentLanguage === "en" ? "বাংলা" : "English";
+
+      languageToggle.textContent = language === "en" ? "বাংলা" : "English";
     });
 
     document.getElementById("year").textContent = new Date().getFullYear();
