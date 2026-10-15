@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The personal website and professional portfolio of Himel Muhammad.">
+  <meta name="theme-color" content="#101827">
+  <title>Himel Muhammad | Personal Website</title>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --panel: #121c30;
+      --text: #f3f6fc;
+      --muted: #a5b2c8;
+      --accent: #8ce5c1;
+      --line: rgba(255,255,255,.12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, "Noto Sans Bengali", sans-serif;
+      line-height: 1.75;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+    .container { width: min(1080px, 90%); margin: auto; }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(11,17,32,.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      min-height: 76px; display: flex; align-items: center;
+      justify-content: space-between; gap: 20px;
+    }
+    .brand { font-size: 20px; font-weight: 800; letter-spacing: -.5px; }
+    .brand span { color: var(--accent); }
+    nav { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; }
+    nav a { font-size: 13px; color: var(--muted); }
+    .lang {
+      border: 1px solid var(--line); border-radius: 30px;
+      padding: 8px 13px; background: var(--panel); color: var(--text);
+      cursor: pointer;
+    }
+    .hero { padding: 105px 0 90px; }
+    .eyebrow { color: var(--accent); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; }
+    h1 { font-size: clamp(42px, 8vw, 78px); line-height: 1.12; letter-spacing: -2px; margin: 18px 0; }
+    h1 span { color: var(--accent); }
+    .intro { max-width: 680px; color: var(--muted); font-size: 18px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .btn {
+      display: inline-block; padding: 11px 18px; border-radius: 8px;
+      border: 1px solid var(--line); font-weight: 700; font-size: 14px;
+    }
+    .btn.primary { background: var(--accent); color: #08151b; border-color: var(--accent); }
+    section { padding: 65px 0; border-top: 1px solid var(--line); }
+    .section-label { color: var(--accent); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
+    h2 { font-size: clamp(28px, 4vw, 40px); margin: 8px 0 24px; letter-spacing: -1px; }
+    .copy { max-width: 760px; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .card {
+      background: var(--panel); border: 1px solid var(--line);
+      border-radius: 14px; padding: 23px;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 19px; }
+    .card p { margin: 0; color: var(--muted); }
+    .tag { display: inline-block; color: var(--accent); font-size: 12px; margin-bottom: 10px; }
+    .contact-list { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+    footer { padding: 28px 0; color: var(--muted); font-size: 13px; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+    [lang="bn"] { font-family: "Noto Sans Bengali", Arial, sans-serif; }
+    @media (max-width: 760px) {
+      .nav { padding: 14px 0; align-items: flex-start; flex-direction: column; }
+      nav { gap: 12px; }
+      .hero { padding: 72px 0 60px; }
+      .grid { grid-template-columns: 1fr; }
+      h1 { letter-spacing: -1px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">HIMEL<span>.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#about" data-en="About" data-bn="পরিচিতি">About</a>
+        <a href="#cv" data-en="CV" data-bn="জীবনবৃত্তান্ত">CV</a>
+        <a href="#work" data-en="Work" data-bn="কাজ">Work</a>
+        <a href="#publications" data-en="Publications" data-bn="প্রকাশনা">Publications</a>
+        <a href="#contact" data-en="Contact" data-bn="যোগাযোগ">Contact</a>
+        <button class="lang" id="languageToggle" type="button">বাংলা</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container hero" id="home">
+      <div class="eyebrow" data-en="PERSONAL WEBSITE & PORTFOLIO" data-bn="ব্যক্তিগত ওয়েবসাইট ও পোর্টফোলিও">PERSONAL WEBSITE & PORTFOLIO</div>
+      <h1>
+        <span data-en="Hello, I'm" data-bn="স্বাগতম, আমি">Hello, I'm</span><br>
+        Himel Muhammad<span>.</span>
+      </h1>
+      <p class="intro" data-en="Welcome to my personal website. This is where I share my background, professional interests, work, and publications." data-bn="আমার ব্যক্তিগত ওয়েবসাইটে স্বাগতম। এখানে আমার পরিচিতি, পেশাগত আগ্রহ, কাজ এবং প্রকাশনা সম্পর্কে জানতে পারবেন।">
+        Welcome to my personal website. This is where I share my background, professional interests, work, and publications.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="#about" data-en="Discover more ↗" data-bn="আরও জানুন ↗">Discover more ↗</a>
+        <a class="btn" href="#contact" data-en="Get in touch" data-bn="যোগাযোগ করুন">Get in touch</a>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-label">01 / <span data-en="INTRODUCTION" data-bn="পরিচিতি">INTRODUCTION</span></div>
+        <h2 data-en="About Me" data-bn="আমার সম্পর্কে">About Me</h2>
+        <p class="copy" data-en="Write a short introduction about yourself here. Describe your background, interests, goals, and what you would like visitors to know about you. Replace this sample text with your real biography." data-bn="এখানে নিজের সম্পর্কে সংক্ষিপ্ত পরিচিতি লিখুন। আপনার অভিজ্ঞতা, আগ্রহ, লক্ষ্য এবং দর্শনার্থীদের আপনার সম্পর্কে কী জানা উচিত তা তুলে ধরুন। এই নমুনা লেখাটি নিজের প্রকৃত তথ্য দিয়ে পরিবর্তন করুন।">
+          Write a short introduction about yourself here. Describe your background, interests, goals, and what you would like visitors to know about you. Replace this sample text with your real biography.
+        </p>
+      </div>
+    </section>
+
+    <section id="cv">
+      <div class="container">
+        <div class="section-label">02 / <span data-en="BACKGROUND" data-bn="পটভূমি">BACKGROUND</span></div>
+        <h2 data-en="CV & Experience" data-bn="জীবনবৃত্তান্ত ও অভিজ্ঞতা">CV & Experience</h2>
+        <div class="grid">
+          <article class="card">
+            <span class="tag" data-en="EDUCATION" data-bn="শিক্ষা">EDUCATION</span>
+            <h3 data-en="Your Degree or Qualification" data-bn="আপনার ডিগ্রি বা যোগ্যতা">Your Degree or Qualification</h3>
+            <p data-en="Add your institution, subject, and year. Remove this card if it does not apply." data-bn="প্রতিষ্ঠান, বিষয় এবং সাল যোগ করুন। প্রযোজ্য না হলে এই অংশটি মুছে দিন।">Add your institution, subject, and year. Remove this card if it does not apply.</p>
+          </article>
+          <article class="card">
+            <span class="tag" data-en="EXPERIENCE" data-bn="অভিজ্ঞতা">EXPERIENCE</span>
+            <h3 data-en="Your Role or Professional Experience" data-bn="আপনার পদ বা পেশাগত অভিজ্ঞতা">Your Role or Professional Experience</h3>
+            <p data-en="Add your real role, organization, and responsibilities here." data-bn="এখানে আপনার প্রকৃত পদ, প্রতিষ্ঠান এবং দায়িত্ব লিখুন।">Add your real role, organization, and responsibilities here.</p>
+          </article>
+        </div>
+        <p class="copy" style="margin-top:20px" data-en="A downloadable CV can be linked here later, once you have a final version ready to publish." data-bn="প্রকাশের জন্য চূড়ান্ত CV প্রস্তুত হলে পরে এখানে তার লিংক যোগ করতে পারবেন।">
+          A downloadable CV can be linked here later, once you have a final version ready to publish.
+        </p>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-label">03 / <span data-en="SELECTED WORK" data-bn="নির্বাচিত কাজ">SELECTED WORK</span></div>
+        <h2 data-en="What I Do" data-bn="আমার কাজ">What I Do</h2>
+        <div class="grid">
+          <article class="card">
+            <h3 data-en="Project One" data-bn="প্রজেক্ট এক">Project One</h3>
+            <p data-en="Describe a real project, your contribution, and its outcome. Add a link when available." data-bn="একটি প্রকৃত কাজ, আপনার অবদান এবং ফলাফল বর্ণনা করুন। থাকলে লিংক যোগ করুন।">Describe a real project, your contribution, and its outcome. Add a link when available.</p>
+          </article>
+          <article class="card">
+            <h3 data-en="Project Two" data-bn="প্রজেক্ট দুই">Project Two</h3>
+            <p data-en="Replace this sample with another project, initiative, or area of professional interest." data-bn="এই নমুনার বদলে অন্য কোনো প্রকল্প, উদ্যোগ বা পেশাগত আগ্রহের বিষয় লিখুন।">Replace this sample with another project, initiative, or area of professional interest.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container">
+        <div class="section-label">04 / <span data-en="WRITING & RESEARCH" data-bn="লেখালেখি ও গবেষণা">WRITING & RESEARCH</span></div>
+        <h2 data-en="Publications" data-bn="প্রকাশনা">Publications</h2>
+        <div class="card">
+          <h3 data-en="Your article or publication title" data-bn="আপনার প্রবন্ধ বা প্রকাশনার শিরোনাম">Your article or publication title</h3>
+          <p data-en="Add the actual title, authors, journal or publisher, year, and DOI or public link. Do not list unpublished work as published." data-bn="প্রকৃত শিরোনাম, লেখক, জার্নাল বা প্রকাশক, সাল এবং DOI বা উন্মুক্ত লিংক যোগ করুন। অপ্রকাশিত কাজকে প্রকাশিত হিসেবে দেখাবেন না।">Add the actual title, authors, journal or publisher, year, and DOI or public link. Do not list unpublished work as published.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-label">05 / <span data-en="SAY HELLO" data-bn="যোগাযোগ">SAY HELLO</span></div>
+        <h2 data-en="Let's Connect" data-bn="যোগাযোগ করি">Let's Connect</h2>
+        <p class="copy" data-en="For professional enquiries, collaborations, or conversations, use the contact details you choose to publish below." data-bn="পেশাগত যোগাযোগ, যৌথ কাজ বা আলোচনার জন্য নিচে আপনার প্রকাশ করতে ইচ্ছুক যোগাযোগের তথ্য যোগ করুন।">For professional enquiries, collaborations, or conversations, use the contact details you choose to publish below.</p>
+        <div class="contact-list">
+          <!-- Replace the sample email before publishing -->
+          <a class="btn primary" href="mailto:your.email@example.com" data-en="Email Me ↗" data-bn="ইমেইল করুন ↗">Email Me ↗</a>
+          <!-- Add your real LinkedIn or other professional profile URL -->
+          <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Himel Muhammad</span>
+      <span data-en="Built with care. Hosted on GitHub Pages." data-bn="যত্ন নিয়ে তৈরি। GitHub Pages-এ হোস্ট করা।">Built with care. Hosted on GitHub Pages.</span>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("languageToggle");
+    let currentLanguage = "en";
+
+    toggle.addEventListener("click", function () {
+      currentLanguage = currentLanguage === "en" ? "bn" : "en";
+      document.documentElement.lang = currentLanguage;
+      document.querySelectorAll("[data-en][data-bn]").forEach(function (element) {
+        element.textContent = element.getAttribute("data-" + currentLanguage);
+      });
+      toggle.textContent = currentLanguage === "en" ? "বাংলা" : "English";
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
