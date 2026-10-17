@@ -113,6 +113,7 @@
       section { padding: 58px 0; }
     }
     @media 
+
 /* Hero layout with main portrait */
 .hero-layout {
   display: grid;
@@ -126,6 +127,7 @@
 }
 
 .hero-photo {
+  display: block;
   width: 100%;
   max-width: 360px;
   justify-self: end;
@@ -139,12 +141,13 @@
 
 .about-photos {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
   margin-top: 28px;
 }
 
 .about-photo {
+  display: block;
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
@@ -155,6 +158,20 @@
 }
 
 @media (max-width: 800px) {
+  .nav {
+    padding: 15px 0;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  nav {
+    gap: 12px;
+  }
+
+  .hero {
+    padding: 78px 0 65px;
+  }
+
   .hero-layout {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -163,6 +180,23 @@
   .hero-photo {
     width: min(100%, 300px);
     justify-self: start;
+  }
+
+  h1 {
+    letter-spacing: -1.8px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  section {
+    padding: 58px 0;
   }
 
   .about-photos {
@@ -179,10 +213,17 @@
     aspect-ratio: 4 / 3;
   }
 }
-(prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition: none !important; }
-    }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    transition: none !important;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -248,7 +289,7 @@
       fetchpriority="high">
   </div>
 </div>
-      <div class="eyebrow" data-en="PERSONAL DEVELOPMENT · LIFE COACHING" data-bn="ব্যক্তিগত উন্নয়ন · লাইফ কোচিং">PERSONAL DEVELOPMENT · LIFE COACHING</div>
+    <section id="about">
       <h1>
         <span data-en="Break Your Limits." data-bn="সীমাবদ্ধতা ভাঙুন।">Break Your Limits.</span><br>
         <span data-en="Unlock Your Potential." data-bn="নিজের সম্ভাবনা জাগিয়ে তুলুন।">Unlock Your Potential.</span>
