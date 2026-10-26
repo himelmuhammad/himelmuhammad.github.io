@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore personal development coaching with Himel Muhammad. Build confidence, challenge limiting beliefs and set meaningful goals.">
+  <title>Coaching Services | Himel Muhammad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #17324d;
+      --teal: #168b83;
+      --bg: #ffffff;
+      --soft: #f0f8f6;
+      --text: #273746;
+      --muted: #657586;
+      --border: #e2ebe8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, "Noto Sans Bengali", Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.8;
+      background: var(--bg);
+    }
+
+    body.bn { font-family: "Noto Sans Bengali", Inter, sans-serif; }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container { width: min(1100px, 90%); margin: auto; }
+
+    header { border-bottom: 1px solid var(--border); }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      padding: 12px 0;
+    }
+
+    .brand {
+      color: var(--navy);
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: var(--teal); }
+
+    button, .button {
+      display: inline-block;
+      padding: 11px 17px;
+      background: var(--teal);
+      color: white;
+      border: 0;
+      border-radius: 9px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 75px 0;
+      background: linear-gradient(135deg, #eaf6f2, #ffffff 75%);
+    }
+
+    .eyebrow {
+      color: var(--teal);
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 800;
+    }
+
+    h1, h2, h3 { color: var(--navy); line-height: 1.35; }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      max-width: 800px;
+      margin: 14px 0;
+      letter-spacing: -1px;
+    }
+
+    h2 { font-size: clamp(26px, 3vw, 34px); }
+
+    .lead { color: var(--muted); font-size: 18px; max-width: 720px; }
+
+    section { padding: 58px 0; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 28px;
+    }
+
+    .card {
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: white;
+      box-shadow: 0 8px 28px rgba(23, 50, 77, 0.04);
+    }
+
+    .card h3 { margin-top: 8px; font-size: 22px; }
+
+    .number {
+      color: var(--teal);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .muted { color: var(--muted); }
+
+    .note {
+      padding: 28px;
+      background: var(--soft);
+      border-radius: 16px;
+      margin-top: 32px;
+    }
+
+    .cta {
+      background: var(--navy);
+      color: white;
+      padding: 38px;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .cta h2 { color: white; }
+    .cta p { color: #dce7ee; }
+
+    footer {
+      margin-top: 50px;
+      border-top: 1px solid var(--border);
+      padding: 25px 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 700px) {
+      .cards { grid-template-columns: 1fr; }
+      .hero { padding: 50px 0; }
+      section { padding: 40px 0; }
+      .cta { padding: 26px 18px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="index.html">HIMEL.</a>
+        <div class="nav-links">
+          <a href="index.html" data-en="Home" data-bn="হোম">Home</a>
+          <a href="about.html" data-en="About" data-bn="পরিচিতি">About</a>
+          <a href="coaching.html" data-en="Coaching" data-bn="কোচিং">Coaching</a>
+          <a href="index.html#library" data-en="Library" data-bn="লাইব্রেরি">Library</a>
+          <a href="#contact" data-en="Contact" data-bn="যোগাযোগ">Contact</a>
+          <button id="languageToggle" type="button">বাংলা</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow" data-en="PERSONAL DEVELOPMENT COACHING" data-bn="ব্যক্তিগত উন্নয়ন কোচিং">
+          PERSONAL DEVELOPMENT COACHING
+        </div>
+
+        <h1 data-en="Build a stronger mindset. Move towards your goals."
+            data-bn="গড়ে তুলুন দৃঢ় মানসিকতা। এগিয়ে যান নিজের লক্ষ্যের দিকে।">
+          Build a stronger mindset. Move towards your goals.
+        </h1>
+
+        <p class="lead"
+           data-en="Explore practical areas of personal development designed to help you understand yourself, build confidence and take purposeful action."
+           data-bn="নিজেকে বুঝতে, আত্মবিশ্বাস গড়ে তুলতে এবং উদ্দেশ্যপূর্ণ পদক্ষেপ নিতে সহায়তা করে এমন ব্যক্তিগত উন্নয়নের বিষয়গুলো জানুন।">
+          Explore practical areas of personal development designed to help you understand yourself, build confidence and take purposeful action.
+        </p>
+
+        <a class="button" href="#services" data-en="Explore Coaching Areas" data-bn="কোচিংয়ের বিষয়গুলো দেখুন">
+          Explore Coaching Areas
+        </a>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="eyebrow" data-en="AREAS OF FOCUS" data-bn="কোচিংয়ের মূল বিষয়">AREAS OF FOCUS</div>
+        <h2 data-en="Where would you like to grow?" data-bn="আপনি কোন ক্ষেত্রে উন্নতি করতে চান?">
+          Where would you like to grow?
+        </h2>
+        <p class="muted" data-en="Start by identifying an area that matters to you."
+           data-bn="আপনার কাছে গুরুত্বপূর্ণ এমন একটি বিষয় দিয়ে শুরু করুন।">
+          Start by identifying an area that matters to you.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <div class="number">01 / CONFIDENCE</div>
+            <h3 data-en="Self-Confidence" data-bn="আত্মবিশ্বাস">Self-Confidence</h3>
+            <p data-en="Explore ways to recognise your strengths, communicate more confidently and approach challenges with greater self-awareness."
+               data-bn="নিজের শক্তি শনাক্ত করা, আত্মবিশ্বাসের সঙ্গে যোগাযোগ করা এবং সচেতনভাবে চ্যালেঞ্জ মোকাবিলা করার উপায় নিয়ে কাজ করুন।">
+              Explore ways to recognise your strengths, communicate more confidently and approach challenges with greater self-awareness.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">02 / MINDSET</div>
+            <h3 data-en="Limiting Beliefs" data-bn="সীমাবদ্ধ বিশ্বাস">Limiting Beliefs</h3>
+            <p data-en="Identify unhelpful thought patterns and consider more balanced, constructive ways to view yourself and your possibilities."
+               data-bn="অসহায়ক চিন্তার ধরন শনাক্ত করুন এবং নিজেকে ও নিজের সম্ভাবনাকে আরও ভারসাম্যপূর্ণ ও গঠনমূলকভাবে দেখার চেষ্টা করুন।">
+              Identify unhelpful thought patterns and consider more balanced, constructive ways to view yourself and your possibilities.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">03 / DIRECTION</div>
+            <h3 data-en="Goal Setting" data-bn="লক্ষ্য নির্ধারণ">Goal Setting</h3>
+            <p data-en="Clarify what matters to you, set realistic priorities and break larger goals into manageable steps."
+               data-bn="আপনার কাছে কী গুরুত্বপূর্ণ তা স্পষ্ট করুন, বাস্তবসম্মত অগ্রাধিকার নির্ধারণ করুন এবং বড় লক্ষ্যকে ছোট ছোট পদক্ষেপে ভাগ করুন।">
+              Clarify what matters to you, set realistic priorities and break larger goals into manageable steps.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">04 / GROWTH</div>
+            <h3 data-en="Personal Development" data-bn="ব্যক্তিগত উন্নয়ন">Personal Development</h3>
+            <p data-en="Build self-awareness, develop useful habits and create a consistent approach to learning and personal growth."
+               data-bn="আত্মসচেতনতা বাড়ান, উপকারী অভ্যাস গড়ে তুলুন এবং শেখা ও ব্যক্তিগত উন্নয়নের জন্য ধারাবাহিক পদ্ধতি তৈরি করুন।">
+              Build self-awareness, develop useful habits and create a consistent approach to learning and personal growth.
+            </p>
+          </article>
+        </div>
+
+        <div class="note">
+          <h3 data-en="A practical, personal approach" data-bn="বাস্তবসম্মত ও ব্যক্তিকেন্দ্রিক পদ্ধতি">
+            A practical, personal approach
+          </h3>
+          <p data-en="Your goals and circumstances are unique. Coaching conversations can help you reflect on your priorities and identify practical next steps. Outcomes depend on your individual situation and effort."
+             data-bn="আপনার লক্ষ্য ও পরিস্থিতি আপনার নিজস্ব। কোচিংয়ের আলোচনার মাধ্যমে অগ্রাধিকার নিয়ে ভাবতে এবং বাস্তবসম্মত পরবর্তী পদক্ষেপ চিহ্নিত করতে পারেন। ফলাফল আপনার ব্যক্তিগত পরিস্থিতি ও প্রচেষ্টার ওপর নির্ভর করে।">
+            Your goals and circumstances are unique. Coaching conversations can help you reflect on your priorities and identify practical next steps. Outcomes depend on your individual situation and effort.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="cta">
+          <h2 data-en="Take your next step" data-bn="পরবর্তী পদক্ষেপ নিন">
+            Take your next step
+          </h2>
+          <p data-en="Share what you would like to work on and begin a conversation."
+             data-bn="আপনি কোন বিষয়ে কাজ করতে চান তা জানান এবং আলোচনা শুরু করুন।">
+            Share what you would like to work on and begin a conversation.
+          </p>
+
+          <a class="button"
+             style="background:white;color:#17324d"
+             href="https://docs.google.com/forms/d/e/1FAIpQLSfHtMZY-sbjUhQKK_OyEAst1un34QJIyL4TQrGbeiOpcVHb8w/viewform?usp=header"
+             target="_blank" rel="noopener"
+             data-en="Request a Consultation"
+             data-bn="কনসালটেশনের জন্য যোগাযোগ করুন">
+            Request a Consultation
+          </a>
+
+          <p><a href="mailto:coachhimelmuhammad@gmail.com">coachhimelmuhammad@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Himel Muhammad</span>
+      <a href="index.html" data-en="Back to Home" data-bn="হোমপেজে ফিরুন">Back to Home</a>
+    </div>
+  </footer>
+
+  <script>
+    const languageToggle = document.getElementById("languageToggle");
+    let currentLanguage = "en";
+
+    languageToggle.addEventListener("click", function () {
+      currentLanguage = currentLanguage === "en" ? "bn" : "en";
+      document.documentElement.lang = currentLanguage;
+      document.body.classList.toggle("bn", currentLanguage === "bn");
+
+      document.querySelectorAll("[data-en][data-bn]").forEach(function (element) {
+        element.textContent = element.getAttribute("data-" + currentLanguage);
+      });
+
+      languageToggle.textContent = currentLanguage === "en" ? "বাংলা" : "English";
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
