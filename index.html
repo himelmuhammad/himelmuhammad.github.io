@@ -1103,5 +1103,44 @@ href="7-habits-teens-bangla.pdf"
   <span class="hm-whatsapp-label">Chat on WhatsApp</span>
 </a>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll(".navlinks a");
+
+  function highlightCurrentPage() {
+    const currentFile =
+      window.location.pathname.split("/").pop() || "index.html";
+    const currentHash = window.location.hash;
+
+    links.forEach(function (link) {
+      const href = link.getAttribute("href");
+      if (!href || href.startsWith("mailto:")) return;
+
+      const url = new URL(href, window.location.href);
+      const linkFile = url.pathname.split("/").pop() || "index.html";
+
+      const isCurrentPage =
+        linkFile === currentFile &&
+        (
+          linkFile !== "index.html" ||
+          !url.hash ||
+          url.hash === currentHash
+        );
+
+      link.classList.toggle("active-page", isCurrentPage);
+
+      if (isCurrentPage) {
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  highlightCurrentPage();
+  window.addEventListener("hashchange", highlightCurrentPage);
+});
+</script>
+
 </body>
 </html>
