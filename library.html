@@ -1,0 +1,819 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Library & Resources | HIMEL Muhammad</title>
+
+  <meta name="description" content="Explore personal development resources, books, learning materials and research resources by HIMEL Muhammad, Personal Development & Life Coach.">
+
+  <meta name="theme-color" content="#17324d">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #17324d;
+      --navy-dark: #10263b;
+      --teal: #168b83;
+      --teal-light: #e9f7f4;
+      --bg: #ffffff;
+      --surface: #f6f9fb;
+      --text: #243448;
+      --muted: #657488;
+      --border: #e2e9ef;
+      --radius: 18px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, Arial, "Noto Sans Bengali", sans-serif;
+      line-height: 1.75;
+    }
+
+    body.bn {
+      font-family: "Noto Sans Bengali", Inter, Arial, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, .94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--navy);
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -.7px;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--teal);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--teal);
+    }
+
+    .lang-btn {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: white;
+      color: var(--navy);
+      padding: 9px 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 82px 0 70px;
+      background:
+        radial-gradient(ellipse at 85% 10%, #e3f5f1 0, transparent 38%),
+        linear-gradient(180deg, #f8fbfd, #ffffff);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--teal);
+      background: var(--teal-light);
+      border-radius: 30px;
+      padding: 6px 13px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 800px;
+      margin: 20px 0;
+      color: var(--navy);
+      font-size: clamp(36px, 6vw, 58px);
+      line-height: 1.13;
+      letter-spacing: -1.8px;
+    }
+
+    .hero p {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 47px;
+      padding: 11px 19px;
+      border-radius: 11px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: transform .2s, background .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: white;
+      background: var(--teal);
+    }
+
+    .btn-primary:hover {
+      background: #11756e;
+    }
+
+    .btn-secondary {
+      color: var(--navy);
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    section {
+      padding: 68px 0;
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: clamp(27px, 4vw, 36px);
+      line-height: 1.3;
+      letter-spacing: -.7px;
+      margin: 12px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 0;
+      padding: 25px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 28px rgba(23, 50, 77, .035);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 35px rgba(23, 50, 77, .08);
+    }
+
+    .icon-box {
+      width: 49px;
+      height: 49px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--teal-light);
+      color: var(--teal);
+      font-size: 23px;
+      margin-bottom: 18px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--teal);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .card h3 {
+      color: var(--navy);
+      font-size: 19px;
+      line-height: 1.45;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .card .card-link {
+      margin-top: auto;
+      color: var(--teal);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .card .card-link:hover {
+      text-decoration: underline;
+    }
+
+    .soft-section {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .notice {
+      margin-top: 24px;
+      padding: 17px 20px;
+      background: #fff8e8;
+      border: 1px solid #f2e4bd;
+      border-radius: 12px;
+      color: #725b27;
+      font-size: 13px;
+    }
+
+    .cta {
+      padding: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border-radius: 22px;
+      background: var(--navy);
+      color: white;
+    }
+
+    .cta h2 {
+      margin-bottom: 8px;
+      font-size: 27px;
+    }
+
+    .cta p {
+      color: #d4deea;
+      margin-bottom: 0;
+      font-size: 14px;
+    }
+
+    .cta .btn {
+      flex-shrink: 0;
+    }
+
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    @media (max-width: 800px) {
+      .nav {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        width: 100%;
+        gap: 12px 17px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 58px 0 48px;
+      }
+
+      section {
+        padding: 50px 0;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .card {
+        padding: 19px;
+      }
+
+      .cta {
+        padding: 25px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .section-heading h2 {
+        font-size: 28px;
+      }
+
+      .cta h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html">HIMEL <span>Muhammad</span></a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" data-en="Home" data-bn="হোম">Home</a>
+        <a href="about.html" data-en="About" data-bn="পরিচিতি">About</a>
+        <a href="coaching.html" data-en="Coaching" data-bn="কোচিং">Coaching</a>
+        <a href="courses.html" data-en="Courses" data-bn="কোর্স">Courses</a>
+        <a href="library.html" data-en="Library" data-bn="লাইব্রেরি">Library</a>
+        <button class="lang-btn" id="languageToggle" type="button" aria-label="Switch language">বাংলা</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow"
+          data-en="LEARN · REFLECT · GROW"
+          data-bn="শিখুন · ভাবুন · এগিয়ে যান">LEARN · REFLECT · GROW</span>
+
+        <h1
+          data-en="Your Library for Personal Growth"
+          data-bn="ব্যক্তিগত উন্নয়নের জন্য আপনার লাইব্রেরি">
+          Your Library for Personal Growth
+        </h1>
+
+        <p
+          data-en="Explore learning resources, books and research materials designed to support your journey towards greater confidence, a stronger mindset and meaningful goals."
+          data-bn="আত্মবিশ্বাস বৃদ্ধি, শক্তিশালী মানসিকতা গঠন এবং অর্থবহ লক্ষ্য অর্জনের যাত্রায় সহায়তার জন্য বই, শেখার উপকরণ ও গবেষণাসামগ্রী দেখুন।">
+          Explore learning resources, books and research materials designed to support your journey towards greater confidence, a stronger mindset and meaningful goals.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#resources"
+            data-en="Explore Resources ↓"
+            data-bn="রিসোর্স দেখুন ↓">Explore Resources ↓</a>
+
+          <a class="btn btn-secondary" href="#research"
+            data-en="Research Library"
+            data-bn="গবেষণা লাইব্রেরি">Research Library</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow"
+            data-en="START LEARNING"
+            data-bn="শেখা শুরু করুন">START LEARNING</span>
+
+          <h2 data-en="Free Learning Resources"
+              data-bn="বিনামূল্যের শেখার উপকরণ">
+            Free Learning Resources
+          </h2>
+
+          <p data-en="Practical materials to help you reflect, build better habits and take meaningful action."
+             data-bn="নিজেকে বুঝতে, ভালো অভ্যাস গড়তে এবং অর্থবহ পদক্ষেপ নিতে সহায়ক ব্যবহারিক উপকরণ।">
+            Practical materials to help you reflect, build better habits and take meaningful action.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="icon-box" aria-hidden="true">📘</div>
+            <span class="tag"
+              data-en="READING RESOURCE"
+              data-bn="পাঠের উপকরণ">READING RESOURCE</span>
+
+            <h3 data-en="The 7 Habits of Highly Effective Teens"
+                data-bn="দ্য ৭ হ্যাবিটস অব হাইলি ইফেকটিভ টিনেজার্স">
+              The 7 Habits of Highly Effective Teens
+            </h3>
+
+            <p data-en="A resource about habits, personal responsibility, goal setting and working effectively with others."
+               data-bn="অভ্যাস, ব্যক্তিগত দায়িত্ব, লক্ষ্য নির্ধারণ এবং অন্যদের সঙ্গে কার্যকরভাবে কাজ করা বিষয়ে একটি পাঠ-উপকরণ।">
+              A resource about habits, personal responsibility, goal setting and working effectively with others.
+            </p>
+
+            <a class="card-link"
+               href="https://himelmuhammad.github.io/7-habits-teens-bangla.pdf.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               data-en="Open PDF ↗"
+               data-bn="PDF খুলুন ↗">Open PDF ↗</a>
+          </article>
+
+          <article class="card">
+            <div class="icon-box" aria-hidden="true">📝</div>
+            <span class="tag"
+              data-en="SELF-REFLECTION"
+              data-bn="আত্ম-অনুধ্যান">SELF-REFLECTION</span>
+
+            <h3 data-en="Personal Growth Notes"
+                data-bn="ব্যক্তিগত উন্নয়নের নোট">
+              Personal Growth Notes
+            </h3>
+
+            <p data-en="Use a notebook to record your goals, daily progress, challenges and lessons learned."
+               data-bn="নিজের লক্ষ্য, প্রতিদিনের অগ্রগতি, চ্যালেঞ্জ ও শেখার বিষয়গুলো লিখে রাখতে একটি নোটবুক ব্যবহার করুন।">
+              Use a notebook to record your goals, daily progress, challenges and lessons learned.
+            </p>
+
+            <span class="card-link"
+              data-en="Start with a notebook"
+              data-bn="একটি নোটবুক দিয়ে শুরু করুন">Start with a notebook</span>
+          </article>
+
+          <article class="card">
+            <div class="icon-box" aria-hidden="true">🎯</div>
+            <span class="tag"
+              data-en="GOAL SETTING"
+              data-bn="লক্ষ্য নির্ধারণ">GOAL SETTING</span>
+
+            <h3 data-en="Goal-Setting Practice"
+                data-bn="লক্ষ্য নির্ধারণের অনুশীলন">
+              Goal-Setting Practice
+            </h3>
+
+            <p data-en="Write down one meaningful goal, why it matters and the smallest action you can take today."
+               data-bn="একটি অর্থবহ লক্ষ্য, সেটি কেন গুরুত্বপূর্ণ এবং আজ আপনি যে ছোট পদক্ষেপটি নিতে পারেন তা লিখুন।">
+              Write down one meaningful goal, why it matters and the smallest action you can take today.
+            </p>
+
+            <span class="card-link"
+              data-en="One step at a time"
+              data-bn="একবারে একটি পদক্ষেপ">One step at a time</span>
+          </article>
+        </div>
+
+        <div class="notice">
+          <strong data-en="Copyright notice: "
+                  data-bn="কপিরাইট নোটিশ: ">Copyright notice: </strong>
+          <span data-en="Only distribute a full book PDF publicly if you own the rights or have permission from the copyright holder. Otherwise, replace the link with an authorised source or your own original notes."
+                data-bn="বইয়ের সম্পূর্ণ PDF প্রকাশ্যে বিতরণ করবেন কেবল আপনার বিতরণের অধিকার বা কপিরাইটধারীর অনুমতি থাকলে। অন্যথায় অনুমোদিত উৎসের লিংক অথবা নিজের তৈরি নোট ব্যবহার করুন।">
+            Only distribute a full book PDF publicly if you own the rights or have permission from the copyright holder. Otherwise, replace the link with an authorised source or your own original notes.
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft-section" id="books">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow"
+            data-en="BOOK COLLECTION"
+            data-bn="বইয়ের সংগ্রহ">BOOK COLLECTION</span>
+
+          <h2 data-en="Books & PDF Guides"
+              data-bn="বই ও PDF গাইড">
+            Books & PDF Guides
+          </h2>
+
+          <p data-en="A growing collection of reading materials for personal development."
+             data-bn="ব্যক্তিগত উন্নয়নের জন্য ধীরে ধীরে তৈরি হচ্ছে পাঠ-উপকরণের সংগ্রহ।">
+            A growing collection of reading materials for personal development.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="icon-box" aria-hidden="true">📚</div>
+            <span class="tag"
+              data-en="COLLECTION"
+              data-bn="সংগ্রহ">COLLECTION</span>
+
+            <h3 data-en="Personal Development Books"
+                data-bn="ব্যক্তিগত উন্নয়নের বই">
+              Personal Development Books
+            </h3>
+
+            <p data-en="Books and reading recommendations will be added here as they become available."
+               data-bn="বই ও পাঠের সুপারিশ পাওয়া গেলে এখানে যুক্ত করা হবে।">
+              Books and reading recommendations will be added here as they become available.
+            </p>
+
+            <span class="card-link"
+              data-en="More books coming soon"
+              data-bn="আরও বই শিগগিরই আসছে">More books coming soon</span>
+          </article>
+
+          <article class="card">
+            <div class="icon-box" aria-hidden="true">📄</div>
+            <span class="tag"
+              data-en="PRACTICAL GUIDES"
+              data-bn="ব্যবহারিক গাইড">PRACTICAL GUIDES</span>
+
+            <h3 data-en="Worksheets & Guides"
+                data-bn="ওয়ার্কশিট ও গাইড">
+              Worksheets & Guides
+            </h3>
+
+            <p data-en="Original worksheets and practical guides can be published here when ready."
+               data-bn="নিজস্ব ওয়ার্কশিট ও ব্যবহারিক গাইড তৈরি হলে এখানে প্রকাশ করা যাবে।">
+              Original worksheets and practical guides can be published here when ready.
+            </p>
+
+            <span class="card-link"
+              data-en="Coming soon"
+              data-bn="শিগগিরই আসছে">Coming soon</span>
+          </article>
+
+          <article class="card">
+            <div class="icon-box" aria-hidden="true">🛍️</div>
+            <span class="tag"
+              data-en="DIGITAL PRODUCTS"
+              data-bn="ডিজিটাল পণ্য">DIGITAL PRODUCTS</span>
+
+            <h3 data-en="PDF Books & Digital Products"
+                data-bn="PDF বই ও ডিজিটাল পণ্য">
+              PDF Books & Digital Products
+            </h3>
+
+            <p data-en="A dedicated collection for original or properly licensed digital products will be added later."
+               data-bn="নিজস্ব বা যথাযথ লাইসেন্সপ্রাপ্ত ডিজিটাল পণ্যের জন্য পরে আলাদা সংগ্রহ তৈরি করা হবে।">
+              A dedicated collection for original or properly licensed digital products will be added later.
+            </p>
+
+            <span class="card-link"
+              data-en="Collection in progress"
+              data-bn="সংগ্রহ তৈরির কাজ চলছে">Collection in progress</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow"
+            data-en="EVIDENCE & KNOWLEDGE"
+            data-bn="গবেষণা ও জ্ঞান">EVIDENCE & KNOWLEDGE</span>
+
+          <h2 data-en="Research Papers & Articles"
+              data-bn="গবেষণাপত্র ও প্রবন্ধ">
+            Research Papers & Articles
+          </h2>
+
+          <p data-en="A place for relevant research papers, articles and evidence-informed reading materials."
+             data-bn="প্রাসঙ্গিক গবেষণাপত্র, প্রবন্ধ এবং প্রমাণভিত্তিক পাঠ-উপকরণের জন্য একটি জায়গা।">
+            A place for relevant research papers, articles and evidence-informed reading materials.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="icon-box" aria-hidden="true">🔬</div>
+            <span class="tag"
+              data-en="RESEARCH"
+              data-bn="গবেষণা">RESEARCH</span>
+
+            <h3 data-en="Research Papers"
+                data-bn="গবেষণাপত্র">Research Papers</h3>
+
+            <p data-en="Research papers will be listed here with their original source, authors and publication details."
+               data-bn="গবেষণাপত্র এখানে মূল উৎস, লেখক এবং প্রকাশনার তথ্যসহ তালিকাভুক্ত করা হবে।">
+              Research papers will be listed here with their original source, authors and publication details.
+            </p>
+
+            <span class="card-link"
+              data-en="Papers coming soon"
+              data-bn="গবেষণাপত্র শিগগিরই আসছে">Papers coming soon</span>
+          </article>
+
+          <article class="card">
+            <div class="icon-box" aria-hidden="true">📰</div>
+            <span class="tag"
+              data-en="ARTICLES"
+              data-bn="প্রবন্ধ">ARTICLES</span>
+
+            <h3 data-en="Articles & Reading"
+                data-bn="প্রবন্ধ ও পাঠ">Articles & Reading</h3>
+
+            <p data-en="Selected articles will include links to the original publishers wherever possible."
+               data-bn="সম্ভব হলে নির্বাচিত প্রবন্ধের সঙ্গে মূল প্রকাশকের লিংক দেওয়া হবে।">
+              Selected articles will include links to the original publishers wherever possible.
+            </p>
+
+            <span class="card-link"
+              data-en="Articles coming soon"
+              data-bn="প্রবন্ধ শিগগিরই আসছে">Articles coming soon</span>
+          </article>
+
+          <article class="card">
+            <div class="icon-box" aria-hidden="true">📑</div>
+            <span class="tag"
+              data-en="PDF ARCHIVE"
+              data-bn="PDF আর্কাইভ">PDF ARCHIVE</span>
+
+            <h3 data-en="Research PDF Archive"
+                data-bn="গবেষণার PDF আর্কাইভ">Research PDF Archive</h3>
+
+            <p data-en="Open-access papers and materials that may legally be shared will be organised here."
+               data-bn="আইনসম্মতভাবে শেয়ার করা যায় এমন ওপেন-অ্যাক্সেস গবেষণাপত্র ও উপকরণ এখানে সাজানো হবে।">
+              Open-access papers and materials that may legally be shared will be organised here.
+            </p>
+
+            <span class="card-link"
+              data-en="Archive coming soon"
+              data-bn="আর্কাইভ শিগগিরই আসছে">Archive coming soon</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft-section" id="contact">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2 data-en="Ready to take your next step?"
+                data-bn="আপনার পরবর্তী পদক্ষেপ নিতে প্রস্তুত?">
+              Ready to take your next step?
+            </h2>
+
+            <p data-en="Explore coaching options and start working towards meaningful personal growth."
+               data-bn="কোচিংয়ের সুযোগগুলো দেখুন এবং অর্থবহ ব্যক্তিগত উন্নয়নের পথে এগিয়ে যান।">
+              Explore coaching options and start working towards meaningful personal growth.
+            </p>
+          </div>
+
+          <a class="btn btn-primary"
+             href="https://docs.google.com/forms/d/e/1FAIpQLSfHtMZY-sbjUhQKK_OyEAst1un34QJIyL4TQrGbeiOpcVHb8w/viewform?usp=header"
+             target="_blank"
+             rel="noopener noreferrer"
+             data-en="Request a Consultation ↗"
+             data-bn="কনসালটেশনের অনুরোধ করুন ↗">
+            Request a Consultation ↗
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="footer-brand" href="index.html">HIMEL Muhammad</a>
+
+      <span data-en="Personal Development & Life Coach"
+            data-bn="ব্যক্তিগত উন্নয়ন ও লাইফ কোচ">
+        Personal Development & Life Coach
+      </span>
+
+      <a href="mailto:coachhimelmuhammad@gmail.com">
+        coachhimelmuhammad@gmail.com
+      </a>
+
+      <span>© <span id="year"></span> HIMEL Muhammad</span>
+    </div>
+  </footer>
+
+  <script>
+    const languageToggle = document.getElementById("languageToggle");
+
+    function setLanguage(language) {
+      document.documentElement.lang = language;
+
+      document.body.classList.toggle("bn", language === "bn");
+
+      document.querySelectorAll("[data-en][data-bn]").forEach(function (element) {
+        element.textContent =
+          language === "bn"
+            ? element.getAttribute("data-bn")
+            : element.getAttribute("data-en");
+      });
+
+      languageToggle.textContent = language === "en" ? "বাংলা" : "English";
+
+      try {
+        localStorage.setItem("himel-library-language", language);
+      } catch (error) {
+        // The language switch still works if storage is unavailable.
+      }
+    }
+
+    languageToggle.addEventListener("click", function () {
+      const currentLanguage = document.documentElement.lang === "bn" ? "bn" : "en";
+      setLanguage(currentLanguage === "en" ? "bn" : "en");
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    let savedLanguage = "en";
+
+    try {
+      savedLanguage = localStorage.getItem("himel-library-language") || "en";
+    } catch (error) {
+      savedLanguage = "en";
+    }
+
+    setLanguage(savedLanguage === "bn" ? "bn" : "en");
+  </script>
+</body>
+</html>
