@@ -1,0 +1,484 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services | HIMEL MUHAMMAD</title>
+  <meta name="description" content="Explore personal development and coaching resources from HIMEL MUHAMMAD, with referrals to qualified professionals where appropriate.">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --panel: #f4f7fa;
+      --text: #18304f;
+      --muted: #5d6b7e;
+      --accent: #e98a2e;
+      --border: rgba(24,48,79,.12);
+      --width: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, Arial, "Noto Sans Bengali", sans-serif;
+      line-height: 1.75;
+    }
+
+    body.bn {
+      font-family: "Noto Sans Bengali", Inter, Arial, sans-serif;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    .container {
+      width: min(var(--width), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--text);
+      font-size: 21px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .brand span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active-page { color: var(--accent); }
+
+    .nav-links a.active-page {
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .lang-btn {
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: white;
+      color: var(--text);
+      padding: 7px 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 76px 0 62px;
+      background: linear-gradient(135deg, #f4f7fa, #ffffff);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 30px;
+      background: #fff0df;
+      color: #a65a12;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 800px;
+      margin: 20px 0;
+      font-size: clamp(36px, 6vw, 56px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    section { padding: 62px 0; }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      margin: 12px 0;
+      font-size: clamp(27px, 4vw, 36px);
+      line-height: 1.3;
+    }
+
+    .section-heading p,
+    .card p { color: var(--muted); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 25px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 8px 28px rgba(24,48,79,.04);
+    }
+
+    .icon {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 16px;
+      border-radius: 13px;
+      background: #fff0df;
+      font-size: 23px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 19px;
+      line-height: 1.4;
+    }
+
+    .card p {
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    .card-link {
+      margin-top: auto;
+      color: #a65a12;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .soft-section {
+      background: var(--panel);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .notice {
+      margin-top: 25px;
+      padding: 18px;
+      border: 1px solid #f0d8b7;
+      border-radius: 12px;
+      background: #fff8ef;
+      color: #72502b;
+      font-size: 13px;
+    }
+
+    .cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 30px;
+      border-radius: 18px;
+      background: var(--text);
+      color: white;
+    }
+
+    .cta h2 { margin-bottom: 8px; }
+    .cta p { margin-bottom: 0; color: #e0e8f1; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: white;
+      font-size: 14px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    footer {
+      padding: 26px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand { color: var(--text); font-weight: 800; }
+
+    @media (max-width: 850px) {
+      .nav {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links { gap: 12px 16px; }
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .cta { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (max-width: 520px) {
+      .container { width: calc(100% - 28px); }
+      .grid { grid-template-columns: 1fr; }
+      .hero { padding: 52px 0 42px; }
+      section { padding: 46px 0; }
+      .nav-links a { font-size: 12px; }
+      h1 { letter-spacing: -1px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html">HIMEL <span>MUHAMMAD</span></a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" data-en="Home" data-bn="হোম">Home</a>
+        <a href="blog.html" data-en="Blog" data-bn="ব্লগ">Blog</a>
+        <a href="courses.html" data-en="Courses" data-bn="কোর্স">Courses</a>
+        <a href="services.html" class="active-page" data-en="Our Services" data-bn="আমাদের সেবা">Our Services</a>
+        <a href="gallery.html" data-en="Gallery" data-bn="গ্যালারি">Gallery</a>
+        <a href="contact.html" data-en="Contact Us" data-bn="যোগাযোগ">Contact Us</a>
+        <button class="lang-btn" id="languageToggle" type="button">বাংলা</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow"
+          data-en="SUPPORT · LEARNING · GROWTH"
+          data-bn="সহায়তা · শিক্ষা · উন্নয়ন">SUPPORT · LEARNING · GROWTH</span>
+
+        <h1 data-en="Explore Our Services"
+            data-bn="আমাদের সেবাগুলো সম্পর্কে জানুন">Explore Our Services</h1>
+
+        <p data-en="Explore personal development resources and service information. Where specialist support is needed, we aim to help visitors find appropriately qualified professionals."
+           data-bn="ব্যক্তিগত উন্নয়নের উপকরণ ও সেবা সম্পর্কে জানুন। বিশেষজ্ঞের সহায়তা প্রয়োজন হলে উপযুক্ত যোগ্যতাসম্পন্ন পেশাজীবীর সন্ধান পেতে সহায়তা করাই আমাদের লক্ষ্য।">
+          Explore personal development resources and service information. Where specialist support is needed, we aim to help visitors find appropriately qualified professionals.
+        </p>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow"
+            data-en="SERVICE DIRECTORY"
+            data-bn="সেবার তালিকা">SERVICE DIRECTORY</span>
+
+          <h2 data-en="Find the Support You Need"
+              data-bn="আপনার প্রয়োজনীয় সহায়তা খুঁজুন">Find the Support You Need</h2>
+
+          <p data-en="Review the areas below to learn what each service generally involves. Availability and provider qualifications should be confirmed before booking."
+             data-bn="প্রতিটি সেবা সাধারণত কী নিয়ে কাজ করে তা জানতে নিচের বিভাগগুলো দেখুন। বুকিংয়ের আগে সেবার প্রাপ্যতা ও প্রদানকারীর যোগ্যতা যাচাই করুন।">
+            Review the areas below to learn what each service generally involves. Availability and provider qualifications should be confirmed before booking.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="icon" aria-hidden="true">🌱</div>
+            <h3 data-en="Personal Development & Life Coaching"
+                data-bn="ব্যক্তিগত উন্নয়ন ও লাইফ কোচিং">Personal Development & Life Coaching</h3>
+            <p data-en="Goal setting, confidence building, personal reflection and practical steps towards meaningful growth."
+               data-bn="লক্ষ্য নির্ধারণ, আত্মবিশ্বাস বৃদ্ধি, আত্ম-অনুধ্যান এবং ব্যক্তিগত উন্নয়নের জন্য বাস্তবসম্মত পদক্ষেপ।">
+              Goal setting, confidence building, personal reflection and practical steps towards meaningful growth.
+            </p>
+            <a class="card-link" href="courses.html"
+               data-en="Explore learning →" data-bn="শেখার উপকরণ দেখুন →">Explore learning →</a>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">🧠</div>
+            <h3 data-en="Mental Wellbeing Support"
+                data-bn="মানসিক সুস্থতা বিষয়ক সহায়তা">Mental Wellbeing Support</h3>
+            <p data-en="For mental health concerns, seek an appropriately qualified mental health professional. Coaching is not a substitute for clinical care."
+               data-bn="মানসিক স্বাস্থ্যসংক্রান্ত সমস্যায় উপযুক্ত যোগ্যতাসম্পন্ন মানসিক স্বাস্থ্য পেশাজীবীর সহায়তা নিন। কোচিং ক্লিনিক্যাল চিকিৎসার বিকল্প নয়।">
+              For mental health concerns, seek an appropriately qualified mental health professional. Coaching is not a substitute for clinical care.
+            </p>
+            <span class="card-link" data-en="Professional referral recommended"
+                  data-bn="বিশেষজ্ঞের কাছে রেফার করার পরামর্শ">Professional referral recommended</span>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">🩺</div>
+            <h3 data-en="Health Coaching"
+                data-bn="স্বাস্থ্য বিষয়ক কোচিং">Health Coaching</h3>
+            <p data-en="General wellbeing education and healthy-habit information. Medical diagnosis and treatment should come from licensed healthcare professionals."
+               data-bn="সাধারণ সুস্থতা ও স্বাস্থ্যকর অভ্যাস সম্পর্কে তথ্য। রোগ নির্ণয় ও চিকিৎসার জন্য লাইসেন্সপ্রাপ্ত স্বাস্থ্য পেশাজীবীর সহায়তা নিন।">
+              General wellbeing education and healthy-habit information. Medical diagnosis and treatment should come from licensed healthcare professionals.
+            </p>
+            <span class="card-link" data-en="Qualified provider required"
+                  data-bn="যোগ্য সেবাদানকারী প্রয়োজন">Qualified provider required</span>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">🕌</div>
+            <h3 data-en="Ruqyah Information"
+                data-bn="রুকইয়াহ বিষয়ক তথ্য">Ruqyah Information</h3>
+            <p data-en="Information about faith-based practices. This should not replace medical or mental health assessment and treatment."
+               data-bn="ধর্মীয় অনুশীলন সম্পর্কে তথ্য। এটি চিকিৎসা বা মানসিক স্বাস্থ্য মূল্যায়ন ও চিকিৎসার বিকল্প নয়।">
+              Information about faith-based practices. This should not replace medical or mental health assessment and treatment.
+            </p>
+            <span class="card-link" data-en="Information and referral"
+                  data-bn="তথ্য ও রেফারাল">Information and referral</span>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">🪞</div>
+            <h3 data-en="Self-Reflection & Personal Audit"
+                data-bn="আত্ম-অনুধ্যান ও ব্যক্তিগত পর্যালোচনা">Self-Reflection & Personal Audit</h3>
+            <p data-en="Structured prompts to reflect on routines, goals, strengths and areas for personal improvement. This is not a clinical mental-health assessment."
+               data-bn="দৈনন্দিন অভ্যাস, লক্ষ্য, শক্তির জায়গা ও উন্নতির ক্ষেত্র পর্যালোচনার জন্য কাঠামোবদ্ধ প্রশ্ন। এটি ক্লিনিক্যাল মানসিক স্বাস্থ্য মূল্যায়ন নয়।">
+              Structured prompts to reflect on routines, goals, strengths and areas for personal improvement. This is not a clinical mental-health assessment.
+            </p>
+            <a class="card-link" href="blog.html"
+               data-en="Explore resources →" data-bn="রিসোর্স দেখুন →">Explore resources →</a>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">🏠</div>
+            <h3 data-en="Home Environment Review"
+                data-bn="বাসার পরিবেশ পর্যালোচনা">Home Environment Review</h3>
+            <p data-en="General information and checklists for reviewing home routines, organisation and everyday living environments."
+               data-bn="বাসার দৈনন্দিন রুটিন, গুছিয়ে রাখা ও বসবাসের পরিবেশ পর্যালোচনার জন্য সাধারণ তথ্য ও চেকলিস্ট।">
+              General information and checklists for reviewing home routines, organisation and everyday living environments.
+            </p>
+            <span class="card-link" data-en="Guidance information"
+                  data-bn="নির্দেশনামূলক তথ্য">Guidance information</span>
+          </article>
+        </div>
+
+        <div class="notice">
+          <strong data-en="Important notice: " data-bn="গুরুত্বপূর্ণ নোটিশ: ">Important notice: </strong>
+          <span data-en="This page provides general information and referrals. It does not claim that every service is directly delivered by HIMEL MUHAMMAD. Check the provider's identity, qualifications, fees, scope and terms before engaging any service."
+                data-bn="এই পেজে সাধারণ তথ্য ও রেফারাল দেওয়া হয়। এখানে উল্লেখিত প্রতিটি সেবা HIMEL MUHAMMAD সরাসরি প্রদান করেন—এমন দাবি করা হচ্ছে না। কোনো সেবা নেওয়ার আগে সেবাদানকারীর পরিচয়, যোগ্যতা, ফি, কাজের পরিধি ও শর্ত যাচাই করুন।">
+            This page provides general information and referrals. It does not claim that every service is directly delivered by HIMEL MUHAMMAD. Check the provider's identity, qualifications, fees, scope and terms before engaging any service.
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft-section">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2 data-en="Have a question?"
+                data-bn="আপনার কি কোনো প্রশ্ন আছে?">Have a question?</h2>
+            <p data-en="Contact us to ask about available information and next steps."
+               data-bn="উপলভ্য তথ্য ও পরবর্তী পদক্ষেপ জানতে যোগাযোগ করুন।">
+              Contact us to ask about available information and next steps.
+            </p>
+          </div>
+          <a class="btn" href="contact.html"
+             data-en="Contact Us →" data-bn="যোগাযোগ করুন →">Contact Us →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="footer-brand" href="index.html">HIMEL MUHAMMAD</a>
+      <span data-en="Personal Development & Life Coach"
+            data-bn="ব্যক্তিগত উন্নয়ন ও লাইফ কোচ">Personal Development & Life Coach</span>
+      <a href="mailto:coachhimelmuhammad@gmail.com">coachhimelmuhammad@gmail.com</a>
+      <span>© <span id="year"></span> HIMEL MUHAMMAD</span>
+    </div>
+  </footer>
+
+  <script>
+    const languageToggle = document.getElementById("languageToggle");
+
+    function setLanguage(language) {
+      document.documentElement.lang = language;
+      document.body.classList.toggle("bn", language === "bn");
+
+      document.querySelectorAll("[data-en][data-bn]").forEach(function(element) {
+        element.textContent = language === "bn"
+          ? element.getAttribute("data-bn")
+          : element.getAttribute("data-en");
+      });
+
+      languageToggle.textContent = language === "en" ? "বাংলা" : "English";
+
+      try {
+        localStorage.setItem("himel-site-language", language);
+      } catch (error) {}
+    }
+
+    languageToggle.addEventListener("click", function() {
+      const current = document.documentElement.lang === "bn" ? "bn" : "en";
+      setLanguage(current === "en" ? "bn" : "en");
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    let savedLanguage = "en";
+    try {
+      savedLanguage = localStorage.getItem("himel-site-language") || "en";
+    } catch (error) {}
+
+    setLanguage(savedLanguage === "bn" ? "bn" : "en");
+  </script>
+</body>
+</html>
