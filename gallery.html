@@ -1,1 +1,383 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | HIMEL MUHAMMAD</title>
+  <meta name="description" content="Explore photos and videos from HIMEL MUHAMMAD's personal development and life coaching platform.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --panel: #f4f7fa;
+      --text: #18304f;
+      --muted: #5d6b7e;
+      --accent: #e98a2e;
+      --border: rgba(24,48,79,.12);
+      --width: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, Arial, "Noto Sans Bengali", sans-serif;
+      line-height: 1.75;
+    }
+
+    body.bn { font-family: "Noto Sans Bengali", Inter, Arial, sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    .container { width: min(var(--width), calc(100% - 40px)); margin: 0 auto; }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand { color: var(--text); font-size: 21px; font-weight: 800; white-space: nowrap; }
+    .brand span { color: var(--accent); }
+
+    .nav-links { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .nav-links a { color: var(--text); font-size: 13px; font-weight: 600; }
+    .nav-links a:hover, .nav-links a.active-page { color: var(--accent); }
+    .nav-links a.active-page { border-bottom: 2px solid var(--accent); }
+
+    .lang-btn {
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: white;
+      color: var(--text);
+      padding: 7px 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 76px 0 62px;
+      background: linear-gradient(135deg, #f4f7fa, #ffffff);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 30px;
+      background: #fff0df;
+      color: #a65a12;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 800px;
+      margin: 20px 0;
+      font-size: clamp(36px, 6vw, 56px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+    }
+
+    .hero p { max-width: 700px; color: var(--muted); font-size: 17px; }
+    section { padding: 62px 0; }
+
+    .section-heading { max-width: 720px; margin-bottom: 30px; }
+    .section-heading h2 { margin: 12px 0; font-size: clamp(27px, 4vw, 36px); line-height: 1.3; }
+    .section-heading p { color: var(--muted); }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .photo-card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: white;
+      box-shadow: 0 8px 28px rgba(24,48,79,.04);
+    }
+
+    .photo-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: var(--panel);
+    }
+
+    .photo-caption { padding: 14px 17px; font-size: 14px; font-weight: 700; }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .video-card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: white;
+    }
+
+    .video-frame { position: relative; aspect-ratio: 16 / 9; background: #eaf0f5; }
+    .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-caption { padding: 16px; font-weight: 700; }
+
+    .empty-note {
+      padding: 18px;
+      border-radius: 12px;
+      background: var(--panel);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 30px;
+      border-radius: 18px;
+      background: var(--text);
+      color: white;
+    }
+
+    .cta h2 { margin-bottom: 8px; }
+    .cta p { margin-bottom: 0; color: #e0e8f1; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: white;
+      font-size: 14px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    footer { padding: 26px 0; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .footer-brand { color: var(--text); font-weight: 800; }
+
+    @media (max-width: 850px) {
+      .nav { padding: 14px 0; align-items: flex-start; flex-direction: column; }
+      .nav-links { gap: 12px 16px; }
+      .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .cta { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (max-width: 520px) {
+      .container { width: calc(100% - 28px); }
+      .photo-grid, .video-grid { grid-template-columns: 1fr; }
+      .hero { padding: 52px 0 42px; }
+      section { padding: 46px 0; }
+      .nav-links a { font-size: 12px; }
+      h1 { letter-spacing: -1px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html">HIMEL <span>MUHAMMAD</span></a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" data-en="Home" data-bn="হোম">Home</a>
+        <a href="blog.html" data-en="Blog" data-bn="ব্লগ">Blog</a>
+        <a href="courses.html" data-en="Courses" data-bn="কোর্স">Courses</a>
+        <a href="services.html" data-en="Our Services" data-bn="আমাদের সেবা">Our Services</a>
+        <a href="gallery.html" class="active-page" data-en="Gallery" data-bn="গ্যালারি">Gallery</a>
+        <a href="contact.html" data-en="Contact Us" data-bn="যোগাযোগ">Contact Us</a>
+        <button class="lang-btn" id="languageToggle" type="button">বাংলা</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow" data-en="PHOTOS · VIDEOS · MOMENTS" data-bn="ছবি · ভিডিও · স্মৃতি">PHOTOS · VIDEOS · MOMENTS</span>
+        <h1 data-en="Photo & Video Gallery" data-bn="ছবি ও ভিডিও গ্যালারি">Photo & Video Gallery</h1>
+        <p data-en="Explore photos and videos connected with learning, personal development and the work of HIMEL MUHAMMAD."
+           data-bn="শেখা, ব্যক্তিগত উন্নয়ন এবং HIMEL MUHAMMAD-এর কাজের সঙ্গে সম্পর্কিত ছবি ও ভিডিও দেখুন।">
+          Explore photos and videos connected with learning, personal development and the work of HIMEL MUHAMMAD.
+        </p>
+      </div>
+    </section>
+
+    <section id="photos">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow" data-en="PHOTO COLLECTION" data-bn="ছবির সংগ্রহ">PHOTO COLLECTION</span>
+          <h2 data-en="Photos" data-bn="ছবি">Photos</h2>
+          <p data-en="Personal and professional photos will appear here."
+             data-bn="ব্যক্তিগত ও পেশাগত ছবিগুলো এখানে থাকবে।">
+            Personal and professional photos will appear here.
+          </p>
+        </div>
+
+        <div class="photo-grid">
+          <article class="photo-card">
+            <img src="himel-main.png" alt="HIMEL MUHAMMAD portrait" loading="lazy">
+            <div class="photo-caption" data-en="HIMEL MUHAMMAD" data-bn="হিমেল মুহাম্মদ">HIMEL MUHAMMAD</div>
+          </article>
+
+          <article class="photo-card">
+            <img src="himel-about-1.jpeg" alt="HIMEL MUHAMMAD personal photo" loading="lazy">
+            <div class="photo-caption" data-en="Personal Development" data-bn="ব্যক্তিগত উন্নয়ন">Personal Development</div>
+          </article>
+
+          <article class="photo-card">
+            <img src="himel-about-2.jpeg" alt="HIMEL MUHAMMAD professional photo" loading="lazy">
+            <div class="photo-caption" data-en="Learning & Growth" data-bn="শেখা ও উন্নয়ন">Learning & Growth</div>
+          </article>
+        </div>
+
+        <p class="empty-note" style="margin-top:20px"
+           data-en="If a photo does not appear, check that its filename matches the file in your GitHub repository exactly, including capital letters and file extension."
+           data-bn="কোনো ছবি দেখা না গেলে GitHub repository-তে ফাইলের নাম, বড়-ছোট অক্ষর এবং ফাইল এক্সটেনশন হুবহু মিলেছে কি না দেখুন।">
+          If a photo does not appear, check that its filename matches the file in your GitHub repository exactly, including capital letters and file extension.
+        </p>
+      </div>
+    </section>
+
+    <section class="soft-section" id="videos" style="background:var(--panel)">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow" data-en="WATCH & LEARN" data-bn="দেখুন ও শিখুন">WATCH & LEARN</span>
+          <h2 data-en="Videos" data-bn="ভিডিও">Videos</h2>
+          <p data-en="Watch featured content and explore the YouTube channel."
+             data-bn="নির্বাচিত ভিডিও দেখুন এবং YouTube চ্যানেল ঘুরে দেখুন।">
+            Watch featured content and explore the YouTube channel.
+          </p>
+        </div>
+
+        <div class="video-grid">
+          <article class="video-card">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/SjDU05gGGwI"
+                title="Featured video by HIMEL MUHAMMAD"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+            </div>
+            <div class="video-caption" data-en="Featured Video" data-bn="নির্বাচিত ভিডিও">Featured Video</div>
+          </article>
+
+          <article class="video-card">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed?listType=user_uploads&list=CoachHimelMuhammad"
+                title="HIMEL MUHAMMAD YouTube videos"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+            </div>
+            <div class="video-caption">
+              <a href="https://www.youtube.com/@CoachHimelMuhammad"
+                 target="_blank" rel="noopener noreferrer"
+                 data-en="Visit YouTube Channel ↗" data-bn="YouTube চ্যানেল দেখুন ↗">
+                Visit YouTube Channel ↗
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2 data-en="Stay connected" data-bn="যোগাযোগ রাখুন">Stay connected</h2>
+            <p data-en="For questions and updates, visit the contact page."
+               data-bn="প্রশ্ন ও আপডেটের জন্য যোগাযোগ পেজে যান।">
+              For questions and updates, visit the contact page.
+            </p>
+          </div>
+          <a class="btn" href="contact.html" data-en="Contact Us →" data-bn="যোগাযোগ করুন →">Contact Us →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="footer-brand" href="index.html">HIMEL MUHAMMAD</a>
+      <span data-en="Personal Development & Life Coach" data-bn="ব্যক্তিগত উন্নয়ন ও লাইফ কোচ">Personal Development & Life Coach</span>
+      <a href="mailto:coachhimelmuhammad@gmail.com">coachhimelmuhammad@gmail.com</a>
+      <span>© <span id="year"></span> HIMEL MUHAMMAD</span>
+    </div>
+  </footer>
+
+  <script>
+    const languageToggle = document.getElementById("languageToggle");
+
+    function setLanguage(language) {
+      document.documentElement.lang = language;
+      document.body.classList.toggle("bn", language === "bn");
+
+      document.querySelectorAll("[data-en][data-bn]").forEach(function(element) {
+        element.textContent = language === "bn"
+          ? element.getAttribute("data-bn")
+          : element.getAttribute("data-en");
+      });
+
+      languageToggle.textContent = language === "en" ? "বাংলা" : "English";
+
+      try {
+        localStorage.setItem("himel-site-language", language);
+      } catch (error) {}
+    }
+
+    languageToggle.addEventListener("click", function() {
+      const current = document.documentElement.lang === "bn" ? "bn" : "en";
+      setLanguage(current === "en" ? "bn" : "en");
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    let savedLanguage = "en";
+    try {
+      savedLanguage = localStorage.getItem("himel-site-language") || "en";
+    } catch (error) {}
+
+    setLanguage(savedLanguage === "bn" ? "bn" : "en");
+  </script>
+</body>
+</html>
+
