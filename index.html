@@ -90,13 +90,16 @@
       flex-wrap: wrap;
     }
 
-    .navlinks a {
-      color: var(--muted);
-      font-size: 13px;
-      transition: color .2s;
-    }
+.navlinks a {
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  transition: color .2s;
+}
 
-    .navlinks a:hover { color: var(--accent); }
+.navlinks a:hover {
+  color: var(--accent);
+}
 
     .lang-button {
       color: var(--bg);
@@ -375,15 +378,14 @@
       <a class="brand" href="#home">HIMEL<span>MUHAMMAD</span></a>
 
 <nav class="navlinks" aria-label="Main navigation">
-  <a href="about.html" data-en="About" data-bn="পরিচিতি">About</a>
+  <a href="index.html" data-en="Home" data-bn="হোম">Home</a>
+  <a href="blog.html" data-en="Blog" data-bn="ব্লগ">Blog</a>
   <a href="courses.html" data-en="Courses" data-bn="কোর্স">Courses</a>
-  <a href="library.html" data-en="Library" data-bn="লাইব্রেরি">Library</a>
-<a href="index.html#videos" data-en="Videos" data-bn="ভিডিও">Videos</a>
-<a href="index.html#consultation" data-en="Consultation" data-bn="পরামর্শ">Consultation</a>
-<a href="index.html#shop" data-en="Shop" data-bn="শপ">Shop</a>
-  <a href="contact.html" data-en="Contact" data-bn="যোগাযোগ">Contact</a>
-        <button class="lang-button" id="languageToggle" type="button">বাংলা</button>
-      </nav>
+  <a href="services.html" data-en="Our Services" data-bn="আমাদের সেবা">Our Services</a>
+  <a href="gallery.html" data-en="Gallery" data-bn="গ্যালারি">Gallery</a>
+  <a href="contact.html" data-en="Contact Us" data-bn="যোগাযোগ">Contact Us</a>
+  <button class="lang-button" id="languageToggle" type="button">বাংলা</button>
+</nav>
     </div>
   </header>
 
