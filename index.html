@@ -1020,10 +1020,11 @@ href="7-habits-teens-bangla.pdf"
     (() => {
       const button = document.getElementById("languageToggle");
       const body = document.body;
-      let language = "en";
+      let language = localStorage.getItem("himel-language") || "en";
 
-      function setLanguage(nextLanguage) {
-        language = nextLanguage;
+function setLanguage(nextLanguage) {
+  language = nextLanguage;
+  localStorage.setItem("himel-language", language);
         body.classList.toggle("bn", language === "bn");
         document.documentElement.lang = language;
 
@@ -1039,7 +1040,7 @@ href="7-habits-teens-bangla.pdf"
       });
 
       document.getElementById("year").textContent = new Date().getFullYear();
-      setLanguage("en");
+      setLanguage(language);
     })();
   </script>
   
