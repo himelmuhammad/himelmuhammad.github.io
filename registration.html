@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Free Registration | Himel Muhammad</title>
+  <meta name="description" content="Register for a free personal development session with Himel Muhammad.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #18304f;
+    }
+
+    header {
+      padding: 18px 5%;
+      border-bottom: 1px solid #e8edf1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .brand {
+      font-size: 22px;
+      font-weight: bold;
+      color: #18304f;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      color: #18304f;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #e98a2e;
+    }
+
+    .lang-button {
+      border: 1px solid #e98a2e;
+      background: white;
+      color: #18304f;
+      padding: 9px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 45px auto;
+      padding: 0 18px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .intro {
+      max-width: 680px;
+      margin: 0 auto 35px;
+      color: #5d6b7e;
+      line-height: 1.8;
+    }
+
+    .form-title {
+      font-size: 23px;
+      margin: 35px 0 20px;
+    }
+
+    .form-frame {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100%;
+      height: 1600px;
+      border: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: #5d6b7e;
+      border-top: 1px solid #e8edf1;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 12px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+
+      main {
+        margin-top: 30px;
+      }
+
+      iframe {
+        height: 1650px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a class="brand" href="index.html">HIMEL MUHAMMAD</a>
+
+  <nav aria-label="Main navigation">
+    <a href="index.html" data-en="Home" data-bn="হোম">Home</a>
+    <a href="about.html" data-en="About" data-bn="আমার সম্পর্কে">About</a>
+    <a href="gallery.html" data-en="Gallery" data-bn="গ্যালারি">Gallery</a>
+    <a href="registration.html" data-en="Free Registration" data-bn="বিনামূল্যে নিবন্ধন">Free Registration</a>
+    <button class="lang-button" id="languageToggle" type="button">বাংলা</button>
+  </nav>
+</header>
+
+<main>
+  <h1 data-en="FREE REGISTRATION" data-bn="বিনামূল্যে নিবন্ধন">
+    FREE REGISTRATION
+  </h1>
+
+  <p class="intro"
+     data-en="Register for a free Personal Development session with Himel Muhammad. Fill out the registration form below."
+     data-bn="হিমেল মুহাম্মদের সঙ্গে বিনামূল্যে Personal Development সেশনে অংশ নিতে নিচের নিবন্ধন ফর্মটি পূরণ করুন।">
+    Register for a free Personal Development session with Himel Muhammad. Fill out the registration form below.
+  </p>
+
+  <h2 class="form-title"
+      data-en="Registration Form"
+      data-bn="নিবন্ধন ফর্ম">
+    Registration Form
+  </h2>
+
+  <div class="form-frame">
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSfHtMZY-sbjUhQKK_OyEAst1un34QJIyL4TQrGbeiOpcVHb8w/viewform?embedded=true"
+      loading="lazy"
+      title="Himel Muhammad Free Registration Form">
+      Loading…
+    </iframe>
+  </div>
+</main>
+
+<footer>
+  © <span id="year"></span> Himel Muhammad. All Rights Reserved.
+</footer>
+
+<script>
+  const languageToggle = document.getElementById("languageToggle");
+  let language = "en";
+
+  try {
+    language = localStorage.getItem("himel-language") || "en";
+  } catch (error) {
+    language = "en";
+  }
+
+  function setLanguage(nextLanguage) {
+    language = nextLanguage;
+    document.documentElement.lang = language;
+    document.body.classList.toggle("bn", language === "bn");
+
+    document.querySelectorAll("[data-en][data-bn]").forEach(element => {
+      element.textContent = element.getAttribute("data-" + language);
+    });
+
+    languageToggle.textContent =
+      language === "en" ? "বাংলা" : "English";
+
+    try {
+      localStorage.setItem("himel-language", language);
+    } catch (error) {
+      // Language switching still works.
+    }
+  }
+
+  languageToggle.addEventListener("click", function() {
+    setLanguage(language === "en" ? "bn" : "en");
+  });
+
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+  setLanguage(language);
+</script>
+
+</body>
+</html>
