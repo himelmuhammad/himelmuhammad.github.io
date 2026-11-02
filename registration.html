@@ -502,14 +502,32 @@
       }
     }
 
-    try {
-
-      const response = await fetch(SCRIPT_URL, {
+     try {
+      await fetch(SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
         body: params
       });
 
+      formStatus.className = "success";
+      formStatus.textContent =
+        language === "en"
+          ? "Your registration request was sent. Please check your Google Sheet."
+          : "নিবন্ধনের অনুরোধ পাঠানো হয়েছে। Google Sheet পরীক্ষা করুন।";
+
+      registrationForm.reset();
+
+    } catch (error) {
+      formStatus.className = "error";
+      formStatus.textContent =
+        language === "en"
+          ? "Unable to send. Please try again."
+          : "পাঠানো যায়নি। আবার চেষ্টা করুন।";
+      console.error("Registration error:", error);
+
+    } finally {
+      submitButton.disabled = false;
+    }
       formStatus.className = "success";
 
       formStatus.textContent =
