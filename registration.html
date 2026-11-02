@@ -504,6 +504,40 @@
 
     try {
 
+      const response = await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: params
+      });
+
+      formStatus.className = "success";
+
+      formStatus.textContent =
+        language === "en"
+          ? "Your registration request was sent. Please check your Google Sheet to confirm."
+          : "আপনার নিবন্ধনের অনুরোধ পাঠানো হয়েছে। Google Sheet-এ তথ্য এসেছে কি না পরীক্ষা করুন।";
+
+      registrationForm.reset();
+
+    } catch (error) {
+
+      formStatus.className = "error";
+
+      formStatus.textContent =
+        language === "en"
+          ? "Unable to send your registration. Please try again."
+          : "নিবন্ধন পাঠানো সম্ভব হয়নি। আবার চেষ্টা করুন।";
+
+      console.error("Registration error:", error);
+
+    } finally {
+
+      submitButton.disabled = false;
+
+    }
+
+  });
+
   await fetch(SCRIPT_URL, {
     method: "POST",
     mode: "no-cors",
