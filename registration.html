@@ -504,22 +504,32 @@
 
     try {
 
-      await fetch(SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",
-        body: params
-      });
+  await fetch(SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    body: params
+  });
 
-      formStatus.className = "success";
+  formStatus.className = "success";
 
-      formStatus.textContent =
-        language === "en"
-          ? "Your registration request was sent. The browser cannot confirm whether it was saved, so please contact us if you do not receive confirmation."
-          : "আপনার নিবন্ধনের অনুরোধ পাঠানো হয়েছে। ব্রাউজার থেকে তথ্য সংরক্ষণ নিশ্চিত করা যাচ্ছে না। নিশ্চিতকরণ না পেলে অনুগ্রহ করে আমাদের সঙ্গে যোগাযোগ করুন।";
+  formStatus.textContent =
+    language === "en"
+      ? "Your registration request was sent. Please check with us if you do not receive confirmation."
+      : "আপনার নিবন্ধনের অনুরোধ পাঠানো হয়েছে। নিশ্চিতকরণ না পেলে আমাদের সঙ্গে যোগাযোগ করুন।";
 
-      registrationForm.reset();
+  registrationForm.reset();
 
-    } catch (error) {
+} catch (error) {
+  formStatus.className = "error";
+
+  formStatus.textContent =
+    language === "en"
+      ? "Unable to send your registration. Please try again."
+      : "নিবন্ধন পাঠানো সম্ভব হয়নি। আবার চেষ্টা করুন।";
+
+} finally {
+  submitButton.disabled = false;
+}
 
       formStatus.className = "error";
 
