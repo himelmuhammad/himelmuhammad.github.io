@@ -369,6 +369,38 @@
   border-radius: 6px;
 }
 
+  
+    /* Consistent navigation typography across every page */
+    body [aria-label="Main navigation"] a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      min-height: 36px;
+      padding: 8px 10px;
+      font-family: inherit;
+      font-size: 14px !important;
+      font-weight: 600 !important;
+      line-height: 1.2;
+      letter-spacing: 0;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    body [aria-label="Main navigation"] a.active-page {
+      font-size: 14px !important;
+      font-weight: 600 !important;
+      line-height: 1.2;
+    }
+
+    @media (max-width: 850px) {
+      body [aria-label="Main navigation"] a,
+      body [aria-label="Main navigation"] a.active-page {
+        font-size: 14px !important;
+        font-weight: 600 !important;
+      }
+    }
+
   </style>
 </head>
 
