@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore learning resources, books, worksheets and research materials from Himel Muhammad.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Library | Himel Muhammad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#ffffff; --panel:#f4f7fa; --text:#18304f; --muted:#5d6b7e;
+      --accent:#e98a2e; --border:rgba(24,48,79,.12); --width:1120px;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:Inter,Arial,"Noto Sans Bengali",sans-serif; line-height:1.75; }
+    body.bn { font-family:Arial,"Noto Sans Bengali",sans-serif; }
+    a { color:inherit; text-decoration:none; }
+    .container { width:min(var(--width),90%); margin:auto; }
+    header { position:sticky; top:0; z-index:20; background:rgba(255,255,255,.96); backdrop-filter:blur(14px); border-bottom:1px solid var(--border); }
+    .nav { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { font-size:20px; font-weight:850; letter-spacing:1px; white-space:nowrap; }
+    .brand span { color:var(--accent); }
+    .nav-links { display:flex; align-items:center; justify-content:flex-end; flex-wrap:wrap; gap:8px 18px; }
+    .nav-links a { color:var(--text); font-size:13px; font-weight:650; }
+    .nav-links a:hover,.nav-links a.active-page { color:var(--accent); }
+    .nav-links a.active-page { border-bottom:2px solid var(--accent); }
+    .lang-button { color:white; background:var(--accent); border:0; border-radius:999px; padding:9px 15px; font-weight:750; cursor:pointer; }
+    .hero { padding:76px 0 62px; background:linear-gradient(135deg,#fff4e8,#ffffff 72%); border-bottom:1px solid var(--border); }
+    .eyebrow,.kicker { color:#b86418; font-size:12px; font-weight:800; letter-spacing:1.7px; text-transform:uppercase; }
+    h1 { max-width:760px; margin:16px 0; font-size:clamp(36px,5.5vw,58px); line-height:1.15; letter-spacing:-1.5px; }
+    h2 { font-size:clamp(27px,4vw,38px); line-height:1.25; margin:12px 0; }
+    p { color:var(--muted); }
+    section { padding:62px 0; }
+    .section-head { max-width:720px; margin-bottom:30px; }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+    .card { display:flex; flex-direction:column; align-items:flex-start; padding:25px; background:white; border:1px solid var(--border); border-radius:16px; box-shadow:0 8px 28px rgba(24,48,79,.04); }
+    .number { color:var(--accent); font-size:11px; font-weight:800; letter-spacing:1px; margin-bottom:14px; }
+    .card h3 { margin:0 0 10px; font-size:19px; }
+    .card p { margin:0 0 18px; font-size:14px; }
+    .status { display:inline-block; margin-top:auto; padding:6px 10px; border:1px solid var(--border); border-radius:999px; color:var(--muted); font-size:12px; }
+    .status.link { color:#a65a12; border-color:#f0d8b7; background:#fff8ef; font-weight:750; }
+    .soft { background:var(--panel); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .cta { display:flex; align-items:center; justify-content:space-between; gap:22px; padding:30px; border-radius:16px; background:var(--text); color:white; }
+    .cta h2 { color:white; margin-top:0; }
+    .cta p { color:#e0e8f1; margin-bottom:0; }
+    .button { display:inline-flex; align-items:center; justify-content:center; padding:12px 18px; border-radius:9px; background:var(--accent); color:white; font-weight:800; white-space:nowrap; }
+    footer { padding:26px 0; border-top:1px solid var(--border); font-size:13px; color:var(--muted); }
+    .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; }
+    @media(max-width:850px) { .nav { padding:14px 0; align-items:flex-start; flex-direction:column; } .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .cta { align-items:flex-start; flex-direction:column; } }
+    @media(max-width:560px) { .container { width:calc(100% - 28px); } .grid { grid-template-columns:1fr; } section { padding:46px 0; } .hero { padding:52px 0 42px; } .nav-links { gap:10px 14px; } .nav-links a { font-size:12px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">HIMEL <span>MUHAMMAD</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" data-en="Home" data-bn="হোম">Home</a>
+        <a href="about.html" data-en="About" data-bn="আমার সম্পর্কে">About</a>
+        <a href="coaching.html" data-en="Coaching" data-bn="কোচিং">Coaching</a>
+        <a href="courses.html" data-en="Courses" data-bn="কোর্স">Courses</a>
+        <a href="library.html" class="active-page" data-en="Library" data-bn="লাইব্রেরি">Library</a>
+        <a href="contact.html" data-en="Contact" data-bn="যোগাযোগ">Contact</a>
+        <button class="lang-button" id="languageToggle" type="button">বাংলা</button>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow" data-en="READ · REFLECT · GROW" data-bn="পড়ুন · ভাবুন · এগিয়ে যান">READ · REFLECT · GROW</div>
+        <h1 data-en="Your Personal Growth Library" data-bn="আপনার ব্যক্তিগত উন্নয়নের লাইব্রেরি">Your Personal Growth Library</h1>
+        <p data-en="Explore selected reading materials and practical learning resources. New authorised resources will be added gradually." data-bn="নির্বাচিত পাঠ্যসামগ্রী ও ব্যবহারিক শেখার উপকরণ দেখুন। অনুমোদিত নতুন উপকরণ ধীরে ধীরে যুক্ত করা হবে।">Explore selected reading materials and practical learning resources. New authorised resources will be added gradually.</p>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker" data-en="RESOURCE COLLECTION" data-bn="শেখার উপকরণ">RESOURCE COLLECTION</div>
+          <h2 data-en="Learn at your own pace" data-bn="নিজের সুবিধামতো শিখুন">Learn at your own pace</h2>
+          <p data-en="This library will focus on practical personal development materials, original resources and publications that are authorised for sharing." data-bn="এই লাইব্রেরিতে থাকবে ব্যক্তিগত উন্নয়নের ব্যবহারিক উপকরণ, নিজস্ব রিসোর্স এবং শেয়ার করার অনুমতি রয়েছে এমন প্রকাশনা।">This library will focus on practical personal development materials, original resources and publications that are authorised for sharing.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <div class="number">RESOURCE 01</div>
+            <h3 data-en="Free Learning Resources" data-bn="বিনামূল্যের শেখার উপকরণ">Free Learning Resources</h3>
+            <p data-en="Worksheets, reflection exercises and practical guides for confidence, mindset and goal setting." data-bn="আত্মবিশ্বাস, মানসিকতা ও লক্ষ্য নির্ধারণের জন্য ওয়ার্কশিট, আত্মপর্যালোচনা এবং ব্যবহারিক নির্দেশিকা।">Worksheets, reflection exercises and practical guides for confidence, mindset and goal setting.</p>
+            <span class="status" data-en="More resources coming soon" data-bn="আরও উপকরণ শিগগিরই আসছে">More resources coming soon</span>
+          </article>
+          <article class="card">
+            <div class="number">RESOURCE 02</div>
+            <h3 data-en="Books & Reading" data-bn="বই ও পাঠ">Books & Reading</h3>
+            <p data-en="A collection for original books and other materials that are authorised for distribution." data-bn="নিজস্ব বই এবং বিতরণের অনুমতি রয়েছে এমন অন্যান্য পাঠ্যসামগ্রীর সংগ্রহ।">A collection for original books and other materials that are authorised for distribution.</p>
+            <span class="status" data-en="Coming soon" data-bn="শিগগিরই আসছে">Coming soon</span>
+          </article>
+          <article class="card">
+            <div class="number">RESOURCE 03</div>
+            <h3 data-en="Research & Publications" data-bn="গবেষণা ও প্রকাশনা">Research & Publications</h3>
+            <p data-en="Publication details and authorised full-text research materials will be listed here." data-bn="প্রকাশনার তথ্য এবং অনুমোদিত পূর্ণাঙ্গ গবেষণাসামগ্রী এখানে যুক্ত করা হবে।">Publication details and authorised full-text research materials will be listed here.</p>
+            <span class="status" data-en="Coming soon" data-bn="শিগগিরই আসছে">Coming soon</span>
+          </article>
+          <article class="card">
+            <div class="number">RESOURCE 04</div>
+            <h3 data-en="The 7 Habits of Highly Effective Teens" data-bn="দ্য ৭ হ্যাবিটস অব হাইলি ইফেকটিভ টিনেজার্স">The 7 Habits of Highly Effective Teens</h3>
+            <p data-en="Read the Bengali overview and explore key habits for responsibility, goal setting, relationships and personal growth." data-bn="দায়িত্বশীলতা, লক্ষ্য নির্ধারণ, সম্পর্ক এবং ব্যক্তিগত উন্নয়নের গুরুত্বপূর্ণ অভ্যাসগুলো নিয়ে বাংলা সারাংশ পড়ুন।">Read the Bengali overview and explore key habits for responsibility, goal setting, relationships and personal growth.</p>
+            <a class="status link" href="index.html#habit-summary" data-en="Read the summary on Home ↗" data-bn="হোমপেজে সারাংশ পড়ুন ↗">Read the summary on Home ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="soft">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2 data-en="Keep learning and growing" data-bn="শিখতে থাকুন, এগিয়ে যান">Keep learning and growing</h2>
+            <p data-en="Explore structured courses or contact me with a question about available resources." data-bn="সাজানো কোর্স দেখুন অথবা উপলভ্য উপকরণ সম্পর্কে জানতে যোগাযোগ করুন।">Explore structured courses or contact me with a question about available resources.</p>
+          </div>
+          <a class="button" href="courses.html" data-en="Explore Courses →" data-bn="কোর্স দেখুন →">Explore Courses →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container footer-inner">
+      <strong>HIMEL MUHAMMAD</strong>
+      <a href="mailto:coachhimelmuhammad@gmail.com">coachhimelmuhammad@gmail.com</a>
+      <span>© <span id="year"></span> HIMEL MUHAMMAD</span>
+    </div>
+  </footer>
+  <script>
+    const languageToggle = document.getElementById("languageToggle");
+    function setLanguage(language) {
+      document.documentElement.lang = language;
+      document.body.classList.toggle("bn", language === "bn");
+      document.querySelectorAll("[data-en][data-bn]").forEach(element => {
+        element.textContent = language === "bn" ? element.getAttribute("data-bn") : element.getAttribute("data-en");
+      });
+      languageToggle.textContent = language === "en" ? "বাংলা" : "English";
+      try { localStorage.setItem("himel-site-language", language); } catch (error) {}
+    }
+    languageToggle.addEventListener("click", () => {
+      const current = document.documentElement.lang === "bn" ? "bn" : "en";
+      setLanguage(current === "en" ? "bn" : "en");
+    });
+    document.getElementById("year").textContent = new Date().getFullYear();
+    let savedLanguage = "en";
+    try { savedLanguage = localStorage.getItem("himel-site-language") || "en"; } catch (error) {}
+    setLanguage(savedLanguage === "bn" ? "bn" : "en");
+  </script>
+</body>
+</html>
