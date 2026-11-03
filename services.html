@@ -473,6 +473,20 @@
       header [aria-label="Main navigation"] a { padding: 7px 6px !important; font-size: 13px !important; }
     }
 
+  
+
+    /* One identical active-page highlight on every page */
+    header [aria-label="Main navigation"] a.active-page,
+    header [aria-label="Main navigation"] a.active-page:hover {
+      color: #167F89 !important;
+      background: #E4F5F4 !important;
+      border: 0 !important;
+      border-bottom: 0 !important;
+      border-radius: 8px !important;
+      box-shadow: none !important;
+      text-decoration: none !important;
+    }
+
   </style>
 </head>
 
@@ -678,5 +692,28 @@
   <span aria-hidden="true">☘</span>
   <span class="hm-whatsapp-label">Chat on WhatsApp</span>
 </a>
+
+<script>
+(function () {
+  const nav = document.querySelector('header [aria-label="Main navigation"]');
+  if (!nav) return;
+
+  const currentFile = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const mainPages = ['index.html', 'about.html', 'gallery.html', 'registration.html'];
+  const activeFile = mainPages.includes(currentFile) ? currentFile : 'index.html';
+
+  nav.querySelectorAll('a[href]').forEach(function (link) {
+    const linkFile = (link.getAttribute('href').split('/').pop() || '').split(/[?#]/)[0].toLowerCase();
+    const isActive = linkFile === activeFile;
+    link.classList.toggle('active-page', isActive);
+    if (isActive) {
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.removeAttribute('aria-current');
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
