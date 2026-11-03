@@ -260,21 +260,147 @@
       }
     }
 
+  
+    /* Match the Home page header and navigation exactly */
+    :root {
+      --bg: #ffffff;
+      --text: #18304f;
+      --muted: #5d6b7e;
+      --accent: #167F89;
+      --border: rgba(24,48,79,.12);
+      --width: 1120px;
+    }
+
+    body {
+      font-family: Inter, Arial, "Noto Sans Bengali", sans-serif;
+      line-height: 1.7;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      width: 100%;
+      padding: 0;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      display: block;
+    }
+
+    .container {
+      width: min(var(--width), 90%);
+      margin: auto;
+    }
+
+    .topbar .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: nowrap;
+    }
+
+    .topbar .brand {
+      font-size: 21px;
+      font-weight: 850;
+      letter-spacing: 1.5px;
+      white-space: nowrap;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .topbar .brand span { color: var(--accent); }
+
+    .topbar .navlinks {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .topbar .navlinks a,
+    .topbar .navlinks a.active-page {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      min-height: 36px;
+      padding: 8px 10px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 14px !important;
+      font-weight: 600 !important;
+      line-height: 1.2;
+      letter-spacing: 0;
+      white-space: nowrap;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    .topbar .navlinks a:hover,
+    .topbar .navlinks a.active-page {
+      color: var(--accent);
+    }
+
+    .topbar .navlinks a.active-page {
+      background: rgba(22,127,137,.10);
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .topbar .lang-button {
+      color: var(--text);
+      background: var(--accent);
+      border: 0;
+      border-radius: 999px;
+      padding: 9px 15px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 750;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 850px) {
+      .topbar .nav {
+        padding: 15px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+      .topbar .navlinks {
+        justify-content: flex-start;
+        gap: 12px 17px;
+      }
+      .topbar .navlinks a,
+      .topbar .navlinks a.active-page {
+        font-size: 14px !important;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .topbar .navlinks { gap: 12px 17px; }
+    }
+
   </style>
 </head>
 
 <body>
 
 
-<header>
-  <a class="brand" href="index.html">HIMEL MUHAMMAD</a>
-  <nav aria-label="Main navigation">
-<a href="index.html" data-en="Home" data-bn="হোম">Home</a>
-<a href="about.html" data-en="About" data-bn="আমার সম্পর্কে">About</a>
-<a href="gallery.html" data-en="Gallery" data-bn="গ্যালারি">Gallery</a>
-<a href="registration.html" class="active-page" data-en="Free Registration" data-bn="বিনামূল্যে নিবন্ধন">Free Registration</a>
-    <button class="lang-button" id="languageToggle" type="button">বাংলা</button>
-  </nav>
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="index.html">HIMEL<span>MUHAMMAD</span></a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="index.html" data-en="Home" data-bn="হোম">Home</a>
+      <a href="about.html" data-en="About" data-bn="আমার সম্পর্কে">About</a>
+      <a href="gallery.html" data-en="Gallery" data-bn="গ্যালারি">Gallery</a>
+      <a href="registration.html" class="active-page" data-en="Free Registration" data-bn="বিনামূল্যে নিবন্ধন">Free Registration</a>
+      <button class="lang-button" id="languageToggle" type="button">বাংলা</button>
+    </nav>
+  </div>
 </header>
 <main>
 
