@@ -51,6 +51,38 @@
     .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; }
     @media(max-width:850px) { .nav { padding:14px 0; align-items:flex-start; flex-direction:column; } .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .cta { align-items:flex-start; flex-direction:column; } }
     @media(max-width:560px) { .container { width:calc(100% - 28px); } .grid { grid-template-columns:1fr; } section { padding:46px 0; } .hero { padding:52px 0 42px; } .nav-links { gap:10px 14px; } .nav-links a { font-size:12px; } }
+  
+    /* Consistent navigation typography across every page */
+    body [aria-label="Main navigation"] a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      min-height: 36px;
+      padding: 8px 10px;
+      font-family: inherit;
+      font-size: 14px !important;
+      font-weight: 600 !important;
+      line-height: 1.2;
+      letter-spacing: 0;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    body [aria-label="Main navigation"] a.active-page {
+      font-size: 14px !important;
+      font-weight: 600 !important;
+      line-height: 1.2;
+    }
+
+    @media (max-width: 850px) {
+      body [aria-label="Main navigation"] a,
+      body [aria-label="Main navigation"] a.active-page {
+        font-size: 14px !important;
+        font-weight: 600 !important;
+      }
+    }
+
   </style>
 </head>
 <body>
