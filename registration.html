@@ -52,11 +52,11 @@
     }
 
     nav a:hover {
-      color: #e98a2e;
+      color: #167F89;
     }
 
     .lang-button {
-      border: 1px solid #e98a2e;
+      border: 1px solid #167F89;
       background: white;
       color: #18304f;
       padding: 9px 14px;
@@ -203,9 +203,7 @@
     }
 
     @media (max-width: 600px) {
-       {
-        justify-content: center;
-      }
+      header { justify-content: center; }
 
       nav {
         justify-content: center;
@@ -224,25 +222,28 @@
         padding: 20px 16px;
       }
     }
+  
+    nav a.active-page {
+      color: #167F89;
+      border-bottom: 2px solid #167F89;
+      padding-bottom: 4px;
+    }
   </style>
 </head>
 
 <body>
 
-<>
-  <a class="brand" href="index.html">HIMEL MUHAMMAD</a>
 
-  <div class="nav-links" aria-label="Main navigation">
+<header>
+  <a class="brand" href="index.html">HIMEL MUHAMMAD</a>
+  <nav aria-label="Main navigation">
 <a href="index.html" data-en="Home" data-bn="হোম">Home</a>
 <a href="about.html" data-en="About" data-bn="আমার সম্পর্কে">About</a>
-<a href="coaching.html" data-en="Coaching" data-bn="কোচিং">Coaching</a>
-<a href="courses.html" data-en="Courses" data-bn="কোর্স">Courses</a>
-<a href="library.html" data-en="Library" data-bn="লাইব্রেরি">Library</a>
-<a href="contact.html" data-en="Contact" data-bn="যোগাযোগ">Contact</a>
-  <button class="lang-button" id="languageToggle" type="button">বাংলা</button>
-</div>
+<a href="gallery.html" data-en="Gallery" data-bn="গ্যালারি">Gallery</a>
+<a href="registration.html" class="active-page" data-en="Free Registration" data-bn="বিনামূল্যে নিবন্ধন">Free Registration</a>
+    <button class="lang-button" id="languageToggle" type="button">বাংলা</button>
+  </nav>
 </header>
-
 <main>
 
   <h1 data-en="FREE REGISTRATION" data-bn="বিনামূল্যে নিবন্ধন">
