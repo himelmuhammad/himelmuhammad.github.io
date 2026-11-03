@@ -380,226 +380,125 @@
   © <span id="year"></span> Himel Muhammad. All Rights Reserved.
 </footer>
 
+
 <script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwtEit-sPtPNhf0030Zzzl3hX-rGgzehp32yE5rHqvaBXwE39cpjTdzTWFeGo1yhUUi/exec";
 
-const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbwtEit-sPtPNhf0030Zzzl3hX-rGgzehp32yE5rHqvaBXwE39cpjTdzTWFeGo1yhUUi/exec";
-  
-  const languageToggle =
-    document.getElementById("languageToggle");
+const languageToggle = document.getElementById("languageToggle");
+const registrationForm = document.getElementById("registrationForm");
+const submitButton = document.getElementById("submitButton");
+const formStatus = document.getElementById("formStatus");
 
-  const registrationForm =
-    document.getElementById("registrationForm");
+let language = "en";
 
-  const submitButton =
-    document.getElementById("submitButton");
+try {
+  language = localStorage.getItem("himel-language") || "en";
+} catch (error) {
+  language = "en";
+}
 
-  const formStatus =
-    document.getElementById("formStatus");
+function setLanguage(nextLanguage) {
+  language = nextLanguage;
+  document.documentElement.lang = language;
 
-  let language = "en";
+  document.querySelectorAll("[data-en][data-bn]").forEach(element => {
+    element.textContent = element.getAttribute("data-" + language);
+  });
+
+  languageToggle.textContent = language === "en" ? "বাংলা" : "English";
+
+  document.querySelectorAll("input, textarea").forEach(element => {
+    if (element.dataset.enPlaceholder) {
+      element.placeholder = element.dataset[language + "Placeholder"];
+    }
+  });
 
   try {
-    language = localStorage.getItem("himel-language") || "en";
+    localStorage.setItem("himel-language", language);
   } catch (error) {
-    language = "en";
+    // Language switching remains available.
+  }
+}
+
+document.getElementById("fullName").dataset.enPlaceholder = "Enter your full name";
+document.getElementById("fullName").dataset.bnPlaceholder = "আপনার সম্পূর্ণ নাম লিখুন";
+
+document.getElementById("age").dataset.enPlaceholder = "Enter your age";
+document.getElementById("age").dataset.bnPlaceholder = "আপনার বয়স লিখুন";
+
+document.getElementById("mobile").dataset.enPlaceholder = "Enter your mobile number";
+document.getElementById("mobile").dataset.bnPlaceholder = "আপনার মোবাইল নম্বর লিখুন";
+
+document.getElementById("city").dataset.enPlaceholder = "Enter your city or district";
+document.getElementById("city").dataset.bnPlaceholder = "আপনার শহর বা জেলার নাম লিখুন";
+
+document.getElementById("email").dataset.enPlaceholder = "Enter your email address";
+document.getElementById("email").dataset.bnPlaceholder = "আপনার ইমেইল ঠিকানা লিখুন";
+
+document.getElementById("goal").dataset.enPlaceholder = "Write briefly about your goals...";
+document.getElementById("goal").dataset.bnPlaceholder = "আপনার লক্ষ্য সম্পর্কে সংক্ষেপে লিখুন...";
+
+languageToggle.addEventListener("click", function() {
+  setLanguage(language === "en" ? "bn" : "en");
+});
+
+setLanguage(language);
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+registrationForm.addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  if (!registrationForm.reportValidity()) {
+    return;
   }
 
-  function setLanguage(nextLanguage) {
+  // Spam check
+  if (document.getElementById("website").value) {
+    return;
+  }
 
-    language = nextLanguage;
+  submitButton.disabled = true;
+  formStatus.className = "pending";
+  formStatus.textContent = language === "en"
+    ? "Submitting your registration..."
+    : "আপনার নিবন্ধন জমা হচ্ছে...";
 
-    document.documentElement.lang = language;
+  const formData = new FormData(registrationForm);
+  const params = new URLSearchParams();
 
-    document.querySelectorAll("[data-en][data-bn]").forEach(element => {
-      element.textContent =
-        element.getAttribute("data-" + language);
-    });
-
-    languageToggle.textContent =
-      language === "en" ? "বাংলা" : "English";
-
-    document.querySelectorAll("input, textarea").forEach(element => {
-      if (element.dataset.enPlaceholder) {
-        element.placeholder =
-          element.dataset[language + "Placeholder"];
-      }
-    });
-
-    try {
-      localStorage.setItem("himel-language", language);
-    } catch (error) {
-      // Language switching remains available.
+  for (const [key, value] of formData.entries()) {
+    if (key !== "website") {
+      params.append(key, value);
     }
   }
 
-  document.getElementById("fullName").dataset.enPlaceholder =
-    "Enter your full name";
-  document.getElementById("fullName").dataset.bnPlaceholder =
-    "আপনার সম্পূর্ণ নাম লিখুন";
+  try {
+    await fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: params
+    });
 
-  document.getElementById("age").dataset.enPlaceholder =
-    "Enter your age";
-  document.getElementById("age").dataset.bnPlaceholder =
-    "আপনার বয়স লিখুন";
+    formStatus.className = "success";
+    formStatus.textContent = language === "en"
+      ? "Your registration request was sent. Please check the Google Sheet to confirm."
+      : "আপনার নিবন্ধনের অনুরোধ পাঠানো হয়েছে। তথ্য জমা হয়েছে কি না Google Sheet পরীক্ষা করুন।";
 
-  document.getElementById("mobile").dataset.enPlaceholder =
-    "Enter your mobile number";
-  document.getElementById("mobile").dataset.bnPlaceholder =
-    "আপনার মোবাইল নম্বর লিখুন";
+    registrationForm.reset();
 
-  document.getElementById("city").dataset.enPlaceholder =
-    "Enter your city or district";
-  document.getElementById("city").dataset.bnPlaceholder =
-    "আপনার শহর বা জেলার নাম লিখুন";
-
-  document.getElementById("email").dataset.enPlaceholder =
-    "Enter your email address";
-  document.getElementById("email").dataset.bnPlaceholder =
-    "আপনার ইমেইল ঠিকানা লিখুন";
-
-  document.getElementById("goal").dataset.enPlaceholder =
-    "Write briefly about your goals...";
-  document.getElementById("goal").dataset.bnPlaceholder =
-    "আপনার লক্ষ্য সম্পর্কে সংক্ষেপে লিখুন...";
-
-  languageToggle.addEventListener("click", function() {
-    setLanguage(language === "en" ? "bn" : "en");
-  });
-
-  document.getElementById("year").textContent =
-    new Date().getFullYear();
-
-  registrationForm.addEventListener("submit", async function(event) {
-
-    event.preventDefault();
-
-    if (!registrationForm.reportValidity()) {
-      return;
-    }
-
-    // Spam check
-    if (document.getElementById("website").value) {
-      return;
-    }
-
-    submitButton.disabled = true;
-
-    formStatus.className = "pending";
-
-    formStatus.textContent =
-      language === "en"
-        ? "Submitting your registration..."
-        : "আপনার নিবন্ধন জমা হচ্ছে...";
-
-    const formData = new FormData(registrationForm);
-
-    const params = new URLSearchParams();
-
-    for (const [key, value] of formData.entries()) {
-      if (key !== "website") {
-        params.append(key, value);
-      }
-    }
-
-     try {
-      await fetch(SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",
-        body: params
-      });
-
-      formStatus.className = "success";
-      formStatus.textContent =
-        language === "en"
-          ? "Your registration request was sent. Please check your Google Sheet."
-          : "নিবন্ধনের অনুরোধ পাঠানো হয়েছে। Google Sheet পরীক্ষা করুন।";
-
-      registrationForm.reset();
-
-    } catch (error) {
-      formStatus.className = "error";
-      formStatus.textContent =
-        language === "en"
-          ? "Unable to send. Please try again."
-          : "পাঠানো যায়নি। আবার চেষ্টা করুন।";
-      console.error("Registration error:", error);
-
-    } finally {
-      submitButton.disabled = false;
-    }
-      formStatus.className = "success";
-
-      formStatus.textContent =
-        language === "en"
-          ? "Your registration request was sent. Please check your Google Sheet to confirm."
-          : "আপনার নিবন্ধনের অনুরোধ পাঠানো হয়েছে। Google Sheet-এ তথ্য এসেছে কি না পরীক্ষা করুন।";
-
-      registrationForm.reset();
-
-    } catch (error) {
-
-      formStatus.className = "error";
-
-      formStatus.textContent =
-        language === "en"
-          ? "Unable to send your registration. Please try again."
-          : "নিবন্ধন পাঠানো সম্ভব হয়নি। আবার চেষ্টা করুন।";
-
-      console.error("Registration error:", error);
-
-    } finally {
-
-      submitButton.disabled = false;
-
-    }
-
-  });
-
-  await fetch(SCRIPT_URL, {
-    method: "POST",
-    mode: "no-cors",
-    body: params
-  });
-
-  formStatus.className = "success";
-
-  formStatus.textContent =
-    language === "en"
-      ? "Your registration request was sent. Please check with us if you do not receive confirmation."
-      : "আপনার নিবন্ধনের অনুরোধ পাঠানো হয়েছে। নিশ্চিতকরণ না পেলে আমাদের সঙ্গে যোগাযোগ করুন।";
-
-  registrationForm.reset();
-
-} catch (error) {
-  formStatus.className = "error";
-
-  formStatus.textContent =
-    language === "en"
+  } catch (error) {
+    formStatus.className = "error";
+    formStatus.textContent = language === "en"
       ? "Unable to send your registration. Please try again."
       : "নিবন্ধন পাঠানো সম্ভব হয়নি। আবার চেষ্টা করুন।";
 
-} finally {
-  submitButton.disabled = false;
-}
+    console.error("Registration error:", error);
 
-      formStatus.className = "error";
-
-      formStatus.textContent =
-        language === "en"
-          ? "Unable to send your registration. Please check your internet connection and try again."
-          : "নিবন্ধন পাঠানো সম্ভব হয়নি। ইন্টারনেট সংযোগ পরীক্ষা করে আবার চেষ্টা করুন।";
-
-    } finally {
-
-      submitButton.disabled = false;
-
-    }
-
-  });
-
-  setLanguage(language);
-
+  } finally {
+    submitButton.disabled = false;
+  }
+});
 </script>
 
 </body>
