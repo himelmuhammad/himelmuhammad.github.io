@@ -1208,6 +1208,71 @@ href="7-habits-teens-bangla.pdf"
         </div>
       </div>
     </section>
+
+    <!-- Institute location map: placed at the bottom of the homepage, before the footer -->
+    <section id="institute-location" class="location-section" aria-labelledby="location-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker" data-en="Find us" data-bn="আমাদের খুঁজে নিন">Find us</div>
+          <h2 id="location-title" data-en="Visit Himel Muhammad Institute of Soft Skill Development"
+              data-bn="হিমেল মুহাম্মাদ ইনস্টিটিউট অব সফট স্কিল ডেভেলপমেন্ট">Visit Himel Muhammad Institute of Soft Skill Development</h2>
+          <p data-en="Find our location on Google Maps and get directions before your visit."
+             data-bn="আমাদের অবস্থান Google Maps-এ দেখুন এবং আসার আগে দিকনির্দেশনা জেনে নিন।">
+            Find our location on Google Maps and get directions before your visit.
+          </p>
+        </div>
+        <div class="location-map">
+          <iframe
+            title="Himel Muhammad Institute of Soft Skill Development location on Google Maps"
+            src="https://www.google.com/maps?output=embed&amp;q=place_id:ChIJ61GpR9PHVTcRoEAofd5dvAk"
+            width="100%"
+            height="420"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <div class="location-actions">
+          <a class="button primary"
+             href="https://www.google.com/maps/search/?api=1&amp;query=Himel%20Muhammad%20Institute%20of%20Soft%20Skill%20Development&amp;query_place_id=ChIJ61GpR9PHVTcRoEAofd5dvAk"
+             target="_blank" rel="noopener noreferrer"
+             data-en="Get Directions on Google Maps"
+             data-bn="Google Maps-এ যাওয়ার পথ দেখুন">Get Directions on Google Maps</a>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .location-section {
+        padding: 72px 0;
+        background: var(--panel);
+        border-top: 1px solid var(--border);
+      }
+      .location-map {
+        overflow: hidden;
+        width: 100%;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        background: var(--panel2);
+        box-shadow: 0 10px 30px rgba(24,48,79,.08);
+      }
+      .location-map iframe {
+        display: block;
+        width: 100%;
+        height: 420px;
+      }
+      .location-actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 22px;
+      }
+      @media (max-width: 600px) {
+        .location-section { padding: 48px 0; }
+        .location-map iframe { height: 320px; }
+      }
+    </style>
+
   </main>
 
   <footer>
